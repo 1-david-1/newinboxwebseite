@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sicherheitstipps für Unternehmen - Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
+    <meta name="keywords" content="Sicherheit, Tipps, Unternehmen, Sicherheitsfirmen, Sicherheitsmaßnahmen">
+    <meta name="author" content="Sicherheitstipps">
+    <title>Sicherheitstipps für Unternehmen</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/sicherheitstipps">
+    <meta property="og:title" content="Sicherheitstipps für Unternehmen">
+    <meta property="og:description" content="Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
+    <meta property="og:image" content="https://example.com/sicherheitstipps-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/sicherheitstipps">
+    <meta property="twitter:title" content="Sicherheitstipps für Unternehmen">
+    <meta property="twitter:description" content="Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
+    <meta property="twitter:image" content="https://example.com/sicherheitstipps-image.jpg">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tips-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .tips-filter-btn {
+            padding: 0.8rem 1.2rem;
+            background: var(--light-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--dark-color);
+            white-space: nowrap;
+        }
+        
+        .tips-filter-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .tips-filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .tips-count {
+            text-align: center;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .tip-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tip-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .tip-icon {
+            font-size: 2rem;
+        }
+        
+        .tip-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .tip-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .tip-body-inner {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tip-category {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tip-action-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .tip-action-btn:hover {
+            background: #2980b9;
+        }
+        
+        .tip-expand-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .tip-expand-btn:hover {
+            background: var(--light-color);
+        }
+        
+        .tip-content {
+            display: none;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            margin-top: 1rem;
+        }
+        
+        .tip-content.show {
+            display: block;
+        }
+        
+        .tip-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .tip-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tip-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tips-filter-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sicherheitstipps für Unternehmen</h1>
+            <p class="subtitle">Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="tips-filters" role="toolbar" aria-label="Sicherheitstipps Filter">
+            <button class="tips-filter-btn active" data-cat="Alle" role="button" tabindex="0">Alle</button>
+            <button class="tips-filter-btn" data-cat="Zugangskontrolle" role="button" tabindex="0">Zugangskontrolle</button>
+            <button class="tips-filter-btn" data-cat="Physische Sicherheit" role="button" tabindex="0">Physische Sicherheit</button>
+            <button class="tips-filter-btn" data-cat="Cybersicherheit" role="button" tabindex="0">Cybersicherheit</button>
+            <button class="tips-filter-btn" data-cat="Personal" role="button" tabindex="0">Personal</button>
+        </div>
+        
+        <div class="tips-count" id="tipsCount">12 Tipps angezeigt</div>
+        
+        <div class="tips-grid" id="tipsGrid">
+            <!-- Tips werden hier dynamisch eingefügt -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Sicherheitstipps für Unternehmen | Alle Rechte vorbehalten</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sicherheitstipps Daten
+        const tipsData = [
+            {
+                id: 1,
+                title: "Zugangskontrolle verbessern",
+                category: "Zugangskontrolle",
+                icon: "🔒",
+                content: "Implementieren Sie eine mehrstufige Zugangskontrolle mit Kartenlesern, Biometrie oder Passwörtern. Regelmäßige Überprüfung der Zugriffsberechtigungen ist entscheidend.",
+                details: [
+                    "Verwenden Sie Kartenleser oder Biometrie für Zugangskontrolle",
+                    "Regelmäßige Überprüfung der Zugriffsberechtigungen",
+                    "Erstellen Sie ein Protokoll aller Zugriffe",
+                    "Implementieren Sie Notfallverfahren für den Zugang"
+                ]
+            },
+            {
+                id: 2,
+                title: "Physische Sicherheit stärken",
+                category: "Physische Sicherheit",
+                icon: "🛡️",
+                content: "Schützen Sie Ihr Unternehmen vor physischen Bedrohungen durch effektive Sicherheitsmaßnahmen. Dies schließt Wachdienste, Kameras und Sicherheitssysteme ein.",
+                details: [
+                    "Installieren Sie Sicherheitskameras an strategischen Stellen",
+                    "Einrichten eines Wachdienstes für kritische Bereiche",
+                    "Verwenden Sie robuste Türen und Fenster",
+                    "Implementieren Sie einen Notfallplan"
+                ]
+            },
+            {
+                id: 3,
+                title: "Cybersicherheit implementieren",
+                category: "Cybersicherheit",
+                icon: "💻",
+                content: "Schützen Sie Ihre Daten vor digitalen Bedrohungen durch Firewall-Systeme, Verschlüsselung und regelmäßige Sicherheitsupdates.",
+                details: [
+                    "Verwenden Sie Firewalls und Antivirus-Software",
+                    "Implementieren Sie Datenverschlüsselung",
+                    "Führen Sie regelmäßige Sicherheitsupdates durch",
+                    "Schulen Sie Mitarbeiter über Phishing-Attacken"
+                ]
+            },
+            {
+                id: 4,
+                title: "Personal Sicherheitstraining",
+                category: "Personal",
+                icon: "🎓",
+                content: "Regelmäßige Schulungen für Mitarbeiter sind entscheidend für die Sicherheit Ihres Unternehmens. Informieren Sie sich über Sicherheitsrisiken und -verfahren.",
+                details: [
+                    "Durchführung von Sicherheitstrainings für Mitarbeiter",
+                    "Regelmäßige Updates über Sicherheitsrisiken",
+                    "Simulation von Notfällen",
+                    "Erstellen von Sicherheitsrichtlinien"
+                ]
+            },
+            {
+                id: 5,
+                title: "Risikobewertung durchführen",
+                category: "Physische Sicherheit",
+                icon: "📊",
+                content: "Regelmäßige Risikobewertungen helfen, potenzielle Sicherheitslücken zu identifizieren und gezielte Maßnahmen zu ergreifen.",
+                details: [
+                    "Identifizierung von Sicherheitsrisiken",
+                    "Bewertung der Wahrscheinlichkeit und Auswirkung",
+                    "Priorisierung von Sicherheitsmaßnahmen",
+                    "Regelmäßige Überprüfung der Risiken"
+                ]
+            },
+            {
+                id: 6,
+                title: "Notfallplanung",
+                category: "Personal",
+                icon: "🚨",
+                content: "Ein guter Notfallplan ist entscheidend für die Reaktion auf Sicherheitsvorfälle. Stellen Sie sicher, dass alle Mitarbeiter wissen, wie sie reagieren sollen.",
+                details: [
+                    "Erstellen eines Notfallplans für verschiedene Szenarien",
+                    "Schulen Sie Mitarbeiter über Notfallverfahren",
+                    "Regelmäßige Übungen durchführen",
+                    "Kontaktinformationen für Notfälle bereitstellen"
+                ]
+            },
+            {
+                id: 7,
+                title: "Zugangskontrolle für Mitarbeiter",
+                category: "Zugangskontrolle",
+                icon: "👥",
+                content: "Implementieren Sie eine effektive Zugangskontrolle für Mitarbeiter, um sicherzustellen, dass nur autorisierte Personen bestimmte Bereiche betreten können.",
+                details: [
+                    "Verwenden Sie Zugangskarten oder Biometrie",
+                    "Regelmäßige Überprüfung der Zugriffsberechtigungen",
+                    "Implementieren Sie Zeitsteuerung für Zugänge",
+                    "Erstellen Sie Protokolle für alle Zugriffe"
+                ]
+            },
+            {
+                id: 8,
+                title: "Datenverschlüsselung",
+                category: "Cybersicherheit",
+                icon: "🔐",
+                content: "Verschlüsseln Sie sensible Daten, um sie vor unbefugtem Zugriff zu schützen. Dies gilt sowohl für gespeicherte als auch für übertragene Daten.",
+                details: [
+                    "Verwenden Sie moderne Verschlüsselungsalgorithmen",
+                    "Implementieren Sie Verschlüsselung für alle Daten",
+                    "Regelmäßige Überprüfung der Verschlüsselung",
+                    "Schulung der Mitarbeiter über Datenverschlüsselung"
+                ]
+            },
+            {
+                id: 9,
+                title: "Sicherheitsaudit durchführen",
+                category: "Physische Sicherheit",
+                icon: "🔍",
+                content: "Führen Sie regelmäßige Sicherheitsaudits durch, um Schwachstellen in Ihrem Sicherheitssystem zu identifizieren und zu beheben.",
+                details: [
+                    "Regelmäßige Überprüfung aller Sicherheitssysteme",
+                    "Identifizierung von Schwachstellen",
+                    "Dokumentation der Ergebnisse",
+                    "Implementierung von Verbesserungsmaßnahmen"
+                ]
+            },
+            {
+                id: 10,
+                title: "Zugangskontrolle für Gäste",
+                category: "Zugangskontrolle",
+                icon: "🙋",
+                content: "Implementieren Sie spezielle Zugangskontrollmaßnahmen für Gäste, um die Sicherheit Ihres Unternehmens zu gewährleisten.",
+                details: [
+                    "Registrierung von Gästen",
+                    "Zugangskontrolle für Gäste",
+                    "Begrenzung des Aufenthalts",
+                    "Überwachung der Gästeaktivitäten"
+                ]
+            },
+            {
+                id: 11,
+                title: "Cybersicherheit für mobile Geräte",
+                category: "Cybersicherheit",
+                icon: "📱",
+                content: "Schützen Sie mobile Geräte vor Cyberbedrohungen durch sichere Konfiguration und regelmäßige Updates.",
+                details: [
+                    "Implementieren Sie mobile Geräte Management (MDM)",
+                    "Regelmäßige Sicherheitsupdates",
+                    "Verwenden Sie sichere Netzwerke",
+                    "Schulung der Mitarbeiter über mobile Sicherheit"
+                ]
+            },
+            {
+                id: 12,
+                title: "Sicherheitskultur fördern",
+                category: "Personal",
+                icon: "🤝",
+                content: "Fördern Sie eine Sicherheitskultur im Unternehmen, in der Sicherheit für alle Mitarbeiter eine Priorität ist.",
+                details: [
+                    "Regelmäßige Sicherheitskommunikation",
+                    "Beteiligung aller Mitarbeiter an Sicherheitsmaßnahmen",
+                    "Belohnung für Sicherheitsbewusstsein",
+                    "Erstellen eines Sicherheitsmanagementsystems"
+                ]
+            }
+        ];
+
+        // Filter-Buttons
+        const filterButtons = document.querySelectorAll('.tips-filter-btn');
+        const tipsGrid = document.getElementById('tipsGrid');
+        const tipsCount = document.getElementById('tipsCount');
+
+        // Aktuelle Filterkategorie
+        let currentFilter = 'Alle';
+
+        // Funktion zum Rendern der Tipps
+        function renderTips(tips) {
+            tipsGrid.innerHTML = '';
+            
+            if (tips.length === 0) {
+                tipsGrid.innerHTML = '<p>Keine Tipps gefunden.</p>';
+                tipsCount.textContent = '0 Tipps angezeigt';
+                return;
+            }
+            
+            tipsCount.textContent = `${tips.length} Tipps angezeigt`;
+            
+            tips.forEach(tip => {
+                const tipCard = document.createElement('div');
+                tipCard.className = 'tip-card';
+                
+                // Inhalt des Tipps
+                tipCard.innerHTML = `
+                    <div class="tip-header">
+                        <span class="tip-icon">${tip.icon}</span>
+                        <h3 class="tip-title">${tip.title}</h3>
+                    </div>
+                    <div class="tip-body">
+                        <div class="tip-category">${tip.category}</div>
+                        <div class="tip-body-inner">
+                            <p>${tip.content}</p>
+                        </div>
+                        <div class="tip-content">
+                            <p>${tip.content}</p>
+                            <ul>
+                                ${tip.details.map(detail => `<li>${detail}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="tip-action">
+                            <button class="tip-action-btn">Mehr erfahren</button>
+                            <button class="tip-expand-btn" aria-label="Inhalt ausklappen">▼</button>
+                        </div>
+                    </div>
+                `;
+                
+                tipsGrid.appendChild(tipCard);
+                
+                // Event Listener für den Expand-Button
+                const expandBtn = tipCard.querySelector('.tip-expand-btn');
+                const tipContent = tipCard.querySelector('.tip-content');
+                
+                expandBtn.addEventListener('click', () => {
+                    tipContent.classList.toggle('show');
+                    expandBtn.textContent = tipContent.classList.contains('show') ? '▲' : '▼';
+                });
+            });
+        }
+
+        // Filter-Funktion
+        function filterTips(category) {
+            currentFilter = category;
+            
+            if (category === 'Alle') {
+                renderTips(tipsData);
+            } else {
+                const filteredTips = tipsData.filter(tip => tip.category === category);
+                renderTips(filteredTips);
+            }
+            
+            // Aktuelle Filter-Button aktivieren
+            filterButtons.forEach(btn => {
+                if (btn.dataset.cat === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Event Listener für Filter-Buttons
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterTips(button.dataset.cat);
+            });
+        });
+
+        // Initiale Darstellung der Tipps
+        renderTips(tipsData);
+
+        // Smooth Scroll für die Buttons (optional)
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tip-action-btn')) {
+                e.target.textContent = 'In Bearbeitung...';
+                setTimeout(() => {
+                    e.target.textContent = 'Mehr erfahren';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
