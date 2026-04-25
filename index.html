@@ -1,571 +1,3989 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sicherheitstipps für Unternehmen - Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
-    <meta name="keywords" content="Sicherheit, Tipps, Unternehmen, Sicherheitsfirmen, Sicherheitsmaßnahmen">
-    <meta name="author" content="Sicherheitstipps">
-    <title>Sicherheitstipps für Unternehmen</title>
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/sicherheitstipps">
-    <meta property="og:title" content="Sicherheitstipps für Unternehmen">
-    <meta property="og:description" content="Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
-    <meta property="og:image" content="https://example.com/sicherheitstipps-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://example.com/sicherheitstipps">
-    <meta property="twitter:title" content="Sicherheitstipps für Unternehmen">
-    <meta property="twitter:description" content="Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen">
-    <meta property="twitter:image" content="https://example.com/sicherheitstipps-image.jpg">
-    
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #34495e;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .tips-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 2rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-        
-        .tips-filter-btn {
-            padding: 0.8rem 1.2rem;
-            background: var(--light-color);
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            color: var(--dark-color);
-            white-space: nowrap;
-        }
-        
-        .tips-filter-btn:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        
-        .tips-filter-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .tips-count {
-            text-align: center;
-            margin: 1rem 0;
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .tip-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .tip-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .tip-icon {
-            font-size: 2rem;
-        }
-        
-        .tip-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-        
-        .tip-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-        
-        .tip-body-inner {
-            margin-bottom: 1.5rem;
-        }
-        
-        .tip-category {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .tip-action {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .tip-action-btn {
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            flex-grow: 1;
-            text-align: center;
-        }
-        
-        .tip-action-btn:hover {
-            background: #2980b9;
-        }
-        
-        .tip-expand-btn {
-            background: none;
-            border: none;
-            color: var(--secondary-color);
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
-        .tip-expand-btn:hover {
-            background: var(--light-color);
-        }
-        
-        .tip-content {
-            display: none;
-            padding: 1rem 0;
-            border-top: 1px solid #eee;
-            margin-top: 1rem;
-        }
-        
-        .tip-content.show {
-            display: block;
-        }
-        
-        .tip-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .tip-content ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tip-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .tips-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tips-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tips-filter-btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InboxElevate – Mehr Anfragen für Sicherheitsunternehmen.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b0e1a;
+      --ink2: #1c2238;
+      --green: #1dba6e;
+      --green-l: #23e882;
+      --green-dim: rgba(29, 186, 110, 0.12);
+      --cream: #f5f3ee;
+      --white: #ffffff;
+      --muted: #6b7184;
+      --border: rgba(11, 14, 26, 0.1);
+      --border-inv: rgba(255, 255, 255, 0.1);
+      --r: 16px;
+      --H: 'Bricolage Grotesque', sans-serif;
+      --B: 'Instrument Sans', sans-serif;
+      --M: 'IBM Plex Mono', monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: auto;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--B);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* CUSTOM CURSOR */
+    #cursor {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      transition: transform .15s, opacity .15s;
+      mix-blend-mode: multiply;
+    }
+
+    #cursor-ring {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--green);
+      position: fixed;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: .5;
+      transition: transform .35s cubic-bezier(.23, 1, .32, 1), width .2s, height .2s, opacity .2s;
+    }
+
+    body:hover #cursor {
+      transform: scale(1);
+    }
+
+    a:hover~#cursor,
+    button:hover~#cursor {
+      transform: scale(2.5);
+    }
+
+    /* PAGE SYSTEM */
+    .page {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: block;
+      animation: pageIn .4s ease;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ════════════════════════════════ NAV ════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      background: rgba(245, 243, 238, 0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--H);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -.03em;
+      cursor: none;
+    }
+
+    .logo svg {
+      width: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .01em;
+      cursor: none;
+      position: relative;
+      transition: color .2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1.5px;
+      background: var(--green);
+      transition: width .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--ink);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--cream) !important;
+      padding: .5rem 1.3rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      font-size: .82rem !important;
+      transition: background .2s, transform .15s !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--green) !important;
+      color: var(--ink) !important;
+      transform: scale(1.04);
+    }
+
+    .ham {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: none;
+      background: none;
+      border: none;
+    }
+
+    .ham span {
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      display: block;
+      transition: .3s;
+    }
+
+    .ham.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .ham.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .ham.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mob-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      inset-inline: 0;
+      z-index: 499;
+      background: rgba(245, 243, 238, .97);
+      backdrop-filter: blur(20px);
+      padding: 2rem clamp(1.5rem, 5vw, 4rem);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mob-menu.open {
+      display: flex;
+    }
+
+    nav.nav-shrink + .mob-menu {
+      top: 52px;
+    }
+
+    .mob-menu a {
+      font-family: var(--H);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      cursor: none;
+    }
+
+    /* ════════════════════════════════ HOME ════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding-top: 68px;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem clamp(1.5rem, 5vw, 4rem) 3rem;
+      position: relative;
+    }
+
+    .hero-label {
+      font-family: var(--M);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--green);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 24px;
+      height: 1.5px;
+      background: var(--green);
+    }
+
+    .hero-h1 {
+      font-family: var(--H);
+      font-size: clamp(3.2rem, 9vw, 8.5rem);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -.05em;
+      color: var(--ink);
+      max-width: 1100px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--green);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-h1 em::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 4px;
+      background: var(--green);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: underlineIn .6s 1s ease forwards;
+    }
+
+    @keyframes underlineIn {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .hero-sub-row {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .hero-p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 420px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .btn-ink {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--ink);
+      color: var(--cream);
+      padding: .85rem 1.8rem;
+      border-radius: 50px;
+      font-family: var(--H);
+      font-weight: 700;
+      font-size: .9rem;
+      text-decoration: none;
+      cursor: none;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+
+    .btn-ink:hover {
+      background: var(--green);
+      color: var(--ink);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(29, 186, 110, .3);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--muted);
+      font-size: .85rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: none;
+      transition: color .2s, gap .2s;
+    }
+
+    .btn-ghost:hover {
+      color: var(--ink);
+      gap: .8rem;
+    }
+
+    .btn-arrow {
+      font-size: 1rem;
+    }
+
+    /* MARQUEE */
+    .marquee-band {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 1.1rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 0;
+      animation: marquee 18s linear infinite;
+    }
+
+    .marquee-band:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-track span {
+      font-family: var(--H);
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: 0 2.5rem;
+      opacity: .55;
+    }
+
+    .marquee-track .dot {
+      color: var(--green);
+      opacity: 1;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* INTRO STRIP */
+    .intro-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .intro-cell {
+      padding: 3rem clamp(1.5rem, 4vw, 3.5rem);
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+
+    .intro-cell:last-child {
+      border-right: none;
+    }
+
+    .intro-cell:hover {
+      background: rgba(29, 186, 110, .06);
+    }
+
+    .intro-num {
+      font-family: var(--M);
+      font-size: .7rem;
+      color: var(--green);
+      letter-spacing: .1em;
+      margin-bottom: 1rem;
+    }
+
+    .intro-cell h3 {
+      font-family: var(--H);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+
+    .intro-cell p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+
+    /* ── SERVICES PAGE ── */
+    .page-hero {
+      padding: calc(68px + 5rem) clamp(1.5rem, 5vw, 4rem) 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-label {
+      font-family: var(--M);
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .page-label::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    .page-h1 {
+      font-family: var(--H);
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -.05em;
+      line-height: .95;
+    }
+
+    .page-h1 span {
+      color: var(--green);
+    }
+
+    .page-sub {
+      color: var(--muted);
+      max-width: 480px;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── SERVICES v2 – zwei Hauptkategorien ── */
+    .services-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .svc-cat {
+      padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
+      border-right: 1px solid var(--border);
+      cursor: none;
+    }
+
+    .svc-cat:last-child {
+      border-right: none;
+    }
+
+    /* Category tab bar */
+    .svc-cat-tabs {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .svc-cat-tab {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .55rem 1.1rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: none;
+      background: transparent;
+      color: var(--muted);
+      transition: all .2s;
+      font-family: var(--B);
+    }
+
+    .svc-cat-tab:hover {
+      border-color: var(--green);
+      color: var(--ink);
+    }
+
+    .svc-cat-tab.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--cream);
+    }
+
+    .svc-cat-tab .tab-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      display: none;
+    }
+
+    .svc-cat-tab.active .tab-dot {
+      display: block;
+    }
+
+    /* Category heading */
+    .svc-cat-head {
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .svc-cat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--green-dim);
+      border: 1.5px solid rgba(29, 186, 110, .25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .svc-cat-head h2 {
+      font-family: var(--H);
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      margin-bottom: .35rem;
+    }
+
+    .svc-cat-head p {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+
+    /* Panels */
+    .svc-panel {
+      display: none;
+    }
+
+    .svc-panel.active {
+      display: block;
+      animation: panelIn .3s ease;
+    }
+
+    @keyframes panelIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .panel-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .panel-feat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.4rem;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .panel-feat:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .panel-feat h4 {
+      font-family: var(--H);
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .panel-feat p {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .panel-platforms {
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: var(--r);
+      padding: 1.6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .panel-platforms h4 {
+      font-family: var(--H);
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .plat-pills {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .plat-pill {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 50px;
+      padding: .25rem .85rem;
+      font-size: .76rem;
+      font-weight: 500;
+    }
+
+    .panel-cta-bar {
+      margin-top: 1.5rem;
+    }
+
+    /* Legacy aliases for old panels still used */
+    .service-panel {
+      display: none;
+    }
+
+    .service-panel.active {
+      display: block;
+      animation: panelIn .3s ease;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: calc(100vh - 68px);
+    }
+
+    .services-nav {
+      border-right: 1px solid var(--border);
+      padding: 3rem 2rem;
+      position: sticky;
+      top: 68px;
+      height: calc(100vh - 68px);
+      overflow-y: auto;
+    }
+
+    .services-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9rem 1rem;
+      border-radius: 10px;
+      cursor: none;
+      margin-bottom: .3rem;
+      transition: background .2s, color .2s;
+      font-weight: 500;
+      font-size: .9rem;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    .services-nav-item:hover,
+    .services-nav-item.active {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    .services-nav-item .tag {
+      font-size: .65rem;
+      opacity: .5;
+      font-family: var(--M);
+    }
+
+    .services-panels {
+      padding: 3rem clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .panel-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      flex-shrink: 0;
+      background: var(--green-dim);
+      border: 1.5px solid rgba(29, 186, 110, .25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .panel-head h2 {
+      font-family: var(--H);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      margin-bottom: .4rem;
+    }
+
+    .panel-head p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* ── PROCESS PAGE ── */
+    .process-timeline {
+      padding: 4rem clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      transition: background .2s;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .tl-num {
+      font-family: var(--H);
+      font-size: 4rem;
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--border);
+      line-height: 1;
+      transition: color .3s, -webkit-text-stroke .3s;
+      letter-spacing: -.04em;
+    }
+
+    .timeline-item:hover .tl-num {
+      color: var(--green);
+      -webkit-text-stroke-color: var(--green);
+    }
+
+    .tl-content h3 {
+      font-family: var(--H);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      margin-bottom: .6rem;
+    }
+
+    .tl-content p {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    .tl-tags {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .tl-tag {
+      background: var(--green-dim);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      font-family: var(--M);
+    }
+
+    /* ── ABOUT PAGE ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 68px);
+    }
+
+    .about-left {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem clamp(2rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-left h2 {
+      font-family: var(--H);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+
+    .about-left h2 span {
+      color: var(--green);
+    }
+
+    .about-manifesto {
+      margin-top: 3rem;
+    }
+
+    .manifesto-item {
+      border-top: 1px solid var(--border-inv);
+      padding: 1.5rem 0;
+    }
+
+    .manifesto-item:last-child {
+      border-bottom: 1px solid var(--border-inv);
+    }
+
+    .manifesto-item .m-label {
+      font-family: var(--M);
+      font-size: .65rem;
+      color: var(--green);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+
+    .manifesto-item p {
+      font-size: .9rem;
+      color: rgba(245, 243, 238, .65);
+      line-height: 1.65;
+    }
+
+    .about-right {
+      padding: 5rem clamp(2rem, 5vw, 4rem);
+    }
+
+    .about-right .page-label {
+      margin-bottom: 2rem;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.8rem;
+      transition: border-color .3s, transform .3s;
+    }
+
+    .value-card:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+    }
+
+    .value-icon {
+      font-size: 1.5rem;
+      margin-bottom: .8rem;
+    }
+
+    .value-card h4 {
+      font-family: var(--H);
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .about-stat-row {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .astat {
+      background: var(--white);
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+    }
+
+    .astat .n {
+      font-family: var(--H);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.04em;
+    }
+
+    .astat .l {
+      font-size: .75rem;
+      color: var(--muted);
+      margin-top: .2rem;
+    }
+
+    /* ── CONTACT PAGE ── */
+    .contact-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 68px);
+    }
+
+    .contact-left {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 5rem clamp(2rem, 5vw, 4rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-left::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29, 186, 110, .15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .contact-left h2 {
+      font-family: var(--H);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -.05em;
+      line-height: 1.05;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-left h2 span {
+      color: var(--green);
+    }
+
+    .contact-left p {
+      color: rgba(245, 243, 238, .6);
+      margin-top: 1rem;
+      font-size: .95rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-details {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cd-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cd-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: rgba(29, 186, 110, .12);
+      border: 1px solid rgba(29, 186, 110, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+    }
+
+    .cd-item a,
+    .cd-item span {
+      color: rgba(245, 243, 238, .7);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: color .2s;
+      cursor: none;
+    }
+
+    .cd-item a:hover {
+      color: var(--green);
+    }
+
+    .contact-right {
+      padding: 5rem clamp(2rem, 5vw, 4rem);
+    }
+
+    .contact-right .page-label {
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .f-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .f-group label {
+      display: block;
+      font-family: var(--M);
+      font-size: .67rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    .f-group input,
+    .f-group textarea,
+    .f-group select {
+      width: 100%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: .8rem 1rem;
+      color: var(--ink);
+      font-family: var(--B);
+      font-size: .92rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      cursor: none;
+      -webkit-appearance: none;
+    }
+
+    .f-group input:focus,
+    .f-group textarea:focus,
+    .f-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(29, 186, 110, .1);
+    }
+
+    .f-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .f-group select option {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .btn-submit {
+      background: var(--ink);
+      color: var(--cream);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: var(--H);
+      font-weight: 700;
+      font-size: .95rem;
+      cursor: none;
+      letter-spacing: -.01em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      margin-top: .3rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--green);
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(29, 186, 110, .3);
+    }
+
+    .form-ok {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(29, 186, 110, .07);
+      border: 1.5px solid rgba(29, 186, 110, .25);
+      border-radius: 16px;
+    }
+
+    .form-ok .ok-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-ok h3 {
+      font-family: var(--H);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+
+    .form-ok p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    /* FAQ on contact page */
+    .faq-section {
+      padding: 4rem clamp(1.5rem, 5vw, 4rem);
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-section .page-label {
+      margin-bottom: 2rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .faq-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .faq-card:hover {
+      border-color: var(--green);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--ink);
+      font-family: var(--H);
+      font-size: .92rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      text-align: left;
+      padding: 1.2rem 1.4rem;
+      cursor: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-ico {
+      font-size: .7rem;
+      color: var(--green);
+      transition: transform .3s;
+      flex-shrink: 0;
+    }
+
+    .faq-card.open .faq-ico {
+      transform: rotate(45deg);
+    }
+
+    /* FAQ answer uses grid rows trick for smooth open/close */
+    .faq-a {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .35s ease;
+    }
+
+    .faq-a-inner {
+      overflow: hidden;
+    }
+
+    .faq-card.open .faq-a {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-a p {
+      padding: .2rem 1.4rem 1.4rem;
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 4rem clamp(1.5rem, 5vw, 4rem) 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: rgba(245, 243, 238, .5);
+      font-size: .83rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 220px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--M);
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245, 243, 238, .3);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(245, 243, 238, .55);
+      text-decoration: none;
+      font-size: .85rem;
+      margin-bottom: .7rem;
+      cursor: none;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(245, 243, 238, .3);
+    }
+
+    .socials {
+      display: flex;
+      gap: .7rem;
+    }
+
+    .soc {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245, 243, 238, .4);
+      font-size: .8rem;
+      text-decoration: none;
+      cursor: none;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+
+    .soc:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: rgba(29, 186, 110, .08);
+    }
+
+    /* ACTIVE SERVICE nav highlight */
+    .services-nav-item.active {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* SCROLL REVEAL */
+    .sr {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .sr.v {
+      opacity: 1;
+      transform: none;
+    }
+
+    .sr-l {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .sr-l.v {
+      opacity: 1;
+      transform: none;
+    }
+
+    .sr-r {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .sr-r.v {
+      opacity: 1;
+      transform: none;
+    }
+
+    [data-d="1"] {
+      transition-delay: .1s;
+    }
+
+    [data-d="2"] {
+      transition-delay: .2s;
+    }
+
+    [data-d="3"] {
+      transition-delay: .3s;
+    }
+
+    [data-d="4"] {
+      transition-delay: .4s;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      .services-categories {
+        grid-template-columns: 1fr;
+      }
+
+      .svc-cat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .svc-cat:last-child {
+        border-bottom: none;
+      }
+
+      .services-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .services-nav {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding: 1.5rem;
+      }
+
+      .services-nav-item .tag {
+        display: none;
+      }
+
+      .about-grid,
+      .contact-split {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-values {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-sub-row {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .f-row {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stat-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ── ANIMATED NAV ARROW ── */
+    .nav-arrow {
+      display: inline-block;
+      animation: arrowBounce 1.2s ease-in-out infinite;
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(5px); }
+    }
+
+    /* ── TIPS PAGE ── */
+    .tips-hero {
+      padding: calc(68px + 4rem) clamp(1.5rem, 5vw, 4rem) 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tips-filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .tips-filter-btn {
+      font-family: var(--B);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: .5rem 1.2rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: none;
+      transition: all .2s;
+    }
+    .tips-filter-btn:hover {
+      border-color: var(--green);
+      color: var(--ink);
+    }
+    .tips-filter-btn.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--cream);
+    }
+    .tips-count {
+      font-family: var(--M);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--muted);
+      text-transform: uppercase;
+      padding: 3rem clamp(1.5rem, 5vw, 4rem) 1rem;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      padding: 0 clamp(1.5rem, 5vw, 4rem) 4rem;
+    }
+    .tip-card-ie {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      cursor: none;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: tipCardIn .4s ease forwards;
+    }
+    .tip-card-ie:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(29, 186, 110, .1);
+    }
+    .tip-card-ie.open {
+      border-color: var(--green);
+      background: rgba(29, 186, 110, .04);
+    }
+    @keyframes tipCardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tip-card-ie:nth-child(1) { animation-delay: .05s; }
+    .tip-card-ie:nth-child(2) { animation-delay: .1s; }
+    .tip-card-ie:nth-child(3) { animation-delay: .15s; }
+    .tip-card-ie:nth-child(4) { animation-delay: .2s; }
+    .tip-card-ie:nth-child(5) { animation-delay: .25s; }
+    .tip-card-ie:nth-child(6) { animation-delay: .3s; }
+    .tip-card-ie:nth-child(7) { animation-delay: .35s; }
+    .tip-card-ie:nth-child(8) { animation-delay: .4s; }
+    .tip-top-ie {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .tip-icon-ie {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--green-dim);
+      border: 1px solid rgba(29, 186, 110, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tip-title-ie {
+      font-family: var(--H);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.4;
+      letter-spacing: -.02em;
+    }
+    .tip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-family: var(--M);
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+      border-radius: 50px;
+      margin-top: .8rem;
+    }
+    .tip-badge-high {
+      background: rgba(29, 186, 110, .12);
+      color: var(--green);
+      border: 1px solid rgba(29, 186, 110, .25);
+    }
+    .tip-badge-mid {
+      background: rgba(250, 199, 117, .12);
+      color: #c98a00;
+      border: 1px solid rgba(250, 199, 117, .3);
+    }
+    .tip-body-ie {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .35s ease;
+    }
+    .tip-body-ie-inner {
+      overflow: hidden;
+    }
+    .tip-card-ie.open .tip-body-ie {
+      grid-template-rows: 1fr;
+    }
+    .tip-body-ie-inner p {
+      padding-top: 1rem;
+      margin-top: .8rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.7;
+    }
+    .tip-body-ie-inner p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .tip-action-ie {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: .8rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--green);
+      font-family: var(--H);
+    }
+    .tip-action-ie::before {
+      content: '→';
+    }
+    .tip-chevron {
+      margin-left: auto;
+      font-size: .7rem;
+      color: var(--muted);
+      transition: transform .3s, color .2s;
+      flex-shrink: 0;
+    }
+    .tip-card-ie.open .tip-chevron {
+      transform: rotate(180deg);
+      color: var(--green);
+    }
+    .tips-cta-strip {
+      background: var(--ink);
+      padding: 4rem clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+    @media(max-width:600px) {
+      .tips-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .ham { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-h1 { font-size: clamp(2.5rem, 11vw, 4rem); }
+      .panel-platforms { flex-direction: column; }
+      .svc-cat-tabs { gap: .4rem; }
+      .svc-cat-tab { font-size: .78rem; padding: .45rem .9rem; }
+    }
+
+    /* ── TYPEWRITER CURSOR ── */
+    .tw-cursor {
+      display: inline-block;
+      width: 3px;
+      height: .85em;
+      background: var(--green);
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: twBlink .7s step-end infinite;
+    }
+    @keyframes twBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ── COUNTER ANIMATION ── */
+    .stat-counter { transition: color .3s; }
+
+    /* ── PULSE CTA ── */
+    .btn-pulse-wrap { position: relative; display: inline-flex; }
+    .btn-pulse-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50px;
+      border: 2px solid var(--green);
+      opacity: .6;
+      animation: pulseRing 2s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(1); opacity: .6; }
+      70% { transform: scale(1.1); opacity: 0; }
+      100% { transform: scale(1.1); opacity: 0; }
+    }
+
+    /* ── TIPS PAGE IMPROVEMENTS ── */
+    .tips-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      margin: 2rem clamp(1.5rem,5vw,4rem) 0;
+    }
+    .tips-stat {
+      background: var(--white);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+    .tips-stat .n {
+      font-family: var(--H);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -.04em;
+    }
+    .tips-stat .l {
+      font-size: .75rem;
+      color: var(--muted);
+      margin-top: .2rem;
+    }
+
+    /* ── HOME HERO TYPEWRITER AREA ── */
+    .hero-tw-line {
+      color: var(--green);
+      font-family: var(--H);
+      font-size: clamp(3.2rem, 9vw, 8.5rem);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -.05em;
+      display: block;
+      min-height: 1em;
+    }
+
+    /* ── COUNTER STATS on home ── */
+    .home-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .home-stat {
+      background: var(--cream);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background .2s;
+    }
+    .home-stat:hover { background: rgba(29,186,110,.06); }
+    .home-stat .n {
+      font-family: var(--H);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -.05em;
+      color: var(--ink);
+    }
+    .home-stat .n span { color: var(--green); }
+    .home-stat .l {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: .3rem;
+      font-family: var(--M);
+      letter-spacing: .04em;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    body.cursor-off,
+    body.cursor-off * {
+      cursor: auto !important;
+    }
+
+    body.cursor-off #cursor,
+    body.cursor-off #cursor-ring {
+      display: none !important;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      z-index: 950;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .progress-bar.visible {
+      opacity: 1;
+    }
+
+    .progress-bar-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--green-l));
+      transform-origin: left;
+      box-shadow: 0 0 18px rgba(29, 186, 110, .35);
+    }
+
+    .page-wipe {
+      position: fixed;
+      inset: 0;
+      z-index: 980;
+      background: var(--green);
+      transform: translateX(-100%);
+      pointer-events: none;
+    }
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 990;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .7s cubic-bezier(.22, 1, .36, 1), opacity .45s ease;
+    }
+
+    .preloader.hide {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .preloader-inner {
+      width: min(420px, calc(100vw - 3rem));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+      text-align: center;
+    }
+
+    .preloader-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      font-family: var(--H);
+      font-weight: 800;
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      letter-spacing: -.04em;
+    }
+
+    .preloader-brand svg {
+      width: 38px;
+      flex-shrink: 0;
+    }
+
+    .preloader-track {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(11, 14, 26, .08);
+      overflow: hidden;
+    }
+
+    .preloader-bar {
+      width: 45%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--green), var(--green-l));
+      animation: loaderBar 1.1s ease-in-out infinite;
+    }
+
+    @keyframes loaderBar {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(260%);
+      }
+    }
+
+    nav {
+      transition: height .28s ease, padding .28s ease, box-shadow .28s ease, background .28s ease;
+    }
+
+    nav.nav-shrink {
+      height: 52px;
+      box-shadow: 0 14px 34px rgba(11, 14, 26, .08);
+      background: rgba(245, 243, 238, 0.94);
+    }
+
+    nav.nav-shrink .logo {
+      font-size: 1.02rem;
+    }
+
+    nav.nav-shrink .nav-links a,
+    nav.nav-shrink .nav-cta {
+      font-size: .78rem !important;
+    }
+
+    .nav-links a:focus-visible,
+    .nav-cta:focus-visible,
+    .btn-ink:focus-visible,
+    .btn-ghost:focus-visible,
+    .faq-q:focus-visible,
+    .ham:focus-visible,
+    .mob-menu a:focus-visible,
+    .tips-filter-btn:focus-visible,
+    .svc-cat-tab:focus-visible,
+    .btn-submit:focus-visible,
+    .floating-wa:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .hero-h1.ready .hero-word-clip {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding-bottom: .06em;
+      margin-right: .12em;
+    }
+
+    .hero-h1.ready .hero-word {
+      display: inline-block;
+      transform: translateY(100%);
+      opacity: 0;
+      animation: wordReveal .6s cubic-bezier(.22, 1, .36, 1) forwards;
+      animation-delay: var(--word-delay, 0ms);
+    }
+
+    .hero-h1.ready .hero-word.no-animate {
+      transform: none;
+      opacity: 1;
+      animation: none;
+    }
+
+    @keyframes wordReveal {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .magnetic {
+      will-change: transform;
+      transition: transform .22s ease, box-shadow .2s, background .2s, color .2s;
+    }
+
+    .spotlight-card,
+    .hover-underline-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(29, 186, 110, 0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity .25s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .spotlight-card:hover::before,
+    .spotlight-card:focus-within::before {
+      opacity: 1;
+    }
+
+    .spotlight-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hover-underline-card::after {
+      content: '';
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      bottom: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .28s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hover-underline-card:hover::after,
+    .hover-underline-card:focus-within::after {
+      transform: scaleX(1);
+    }
+
+    .intro-cell,
+    .panel-feat,
+    .faq-card {
+      position: relative;
+    }
+
+    .home-section {
+      padding: 5.5rem clamp(1.5rem, 5vw, 4rem);
+      border-top: 1px solid var(--border);
+    }
+
+    .testimonials-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.25rem;
+    }
+
+    .testimonial-card {
+      min-height: 100%;
+      background: rgba(255, 255, 255, .52);
+      border: 1px solid rgba(255, 255, 255, .48);
+      border-radius: 18px;
+      padding: 1.7rem;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 16px 38px rgba(11, 14, 26, .06);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(29, 186, 110, .32);
+      box-shadow: 0 20px 44px rgba(11, 14, 26, .08);
+    }
+
+    .testimonial-stars {
+      display: inline-flex;
+      gap: .2rem;
+      color: var(--green);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card p {
+      color: var(--ink2);
+      line-height: 1.75;
+      font-size: .92rem;
+    }
+
+    .testimonial-meta {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(11, 14, 26, .08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-name {
+      font-family: var(--H);
+      font-size: .98rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .testimonial-type {
+      font-family: var(--M);
+      font-size: .66rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      padding: .36rem .72rem;
+      border-radius: 999px;
+      background: rgba(29, 186, 110, .1);
+      border: 1px solid rgba(29, 186, 110, .18);
+    }
+
+    .home-faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 2.2rem;
+      align-items: start;
+    }
+
+    .home-faq-copy p:last-child {
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.75;
+    }
+
+    .home-faq-list {
+      display: grid;
+      gap: .9rem;
+    }
+
+    .home-faq-list .faq-card {
+      background: rgba(255, 255, 255, .82);
+    }
+
+    .toast-stack {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 6.2rem;
+      z-index: 960;
+      display: grid;
+      gap: .7rem;
+      width: min(360px, calc(100vw - 2rem));
+      pointer-events: none;
+    }
+
+    .toast {
+      background: rgba(11, 14, 26, .96);
+      color: var(--cream);
+      border-radius: 16px;
+      padding: .95rem 1rem;
+      box-shadow: 0 16px 40px rgba(11, 14, 26, .24);
+      transform: translateY(18px);
+      opacity: 0;
+      transition: transform .28s ease, opacity .28s ease;
+      border-left: 4px solid var(--green);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.error {
+      border-left-color: #d94b4b;
+    }
+
+    .toast-title {
+      font-family: var(--H);
+      font-weight: 700;
+      font-size: .92rem;
+      margin-bottom: .2rem;
+    }
+
+    .toast p {
+      font-size: .84rem;
+      line-height: 1.6;
+      color: rgba(245, 243, 238, .76);
+    }
+
+    .floating-wa-wrap {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 955;
+    }
+
+    .floating-wa-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 999px;
+      border: 2px solid var(--green);
+      opacity: .45;
+      animation: pulseRing 2s ease-out infinite;
+      pointer-events: none;
+    }
+
+    .floating-wa {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 34px rgba(29, 186, 110, .28);
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: none;
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-3px);
+      background: var(--green-l);
+      box-shadow: 0 18px 38px rgba(29, 186, 110, .34);
+    }
+
+    .floating-wa svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .wa-tooltip {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%) translateX(8px);
+      background: rgba(11, 14, 26, .94);
+      color: var(--cream);
+      padding: .55rem .8rem;
+      border-radius: 10px;
+      font-size: .78rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      box-shadow: 0 10px 26px rgba(11, 14, 26, .18);
+    }
+
+    .floating-wa-wrap:hover .wa-tooltip,
+    .floating-wa-wrap:focus-within .wa-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .scramble-ready {
+      min-width: 1px;
+    }
+
+    @media(max-width:900px) {
+      .testimonials-wrap,
+      .home-faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .toast-stack {
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+        bottom: 5.8rem;
+      }
+
+      .floating-wa-wrap {
+        right: 1rem;
+        bottom: 1rem;
+      }
+
+      .wa-tooltip {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+      }
+
+      .sr,
+      .sr-l,
+      .sr-r {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>Sicherheitstipps für Unternehmen</h1>
-            <p class="subtitle">Praktische Ratschläge zur Verbesserung der Sicherheit in Ihrem Unternehmen</p>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-brand">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span>InboxElevate</span>
+      </div>
+      <div class="preloader-track"><div class="preloader-bar"></div></div>
+    </div>
+  </div>
+
+  <div class="page-wipe" id="pageWipe" aria-hidden="true"></div>
+  <div class="progress-bar" id="scrollProgress" aria-hidden="true"><div class="progress-bar-fill" id="scrollProgressFill"></div></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <div class="floating-wa-wrap">
+    <span class="wa-tooltip">Direkt auf WhatsApp schreiben</span>
+    <a class="floating-wa" href="https://wa.me/49XXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="Direkt auf WhatsApp schreiben">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M27.2 4.8A15.32 15.32 0 0 0 16.11.2C7.67.2.8 7.07.8 15.51c0 2.72.71 5.38 2.06 7.72L.6 31.4l8.38-2.2a15.28 15.28 0 0 0 7.13 1.81h.01c8.44 0 15.31-6.87 15.31-15.31 0-4.09-1.59-7.93-4.23-10.9Zm-11.09 23.6h-.01a12.9 12.9 0 0 1-6.58-1.8l-.47-.28-4.97 1.3 1.33-4.84-.31-.5a12.75 12.75 0 0 1-1.98-6.78c0-7.02 5.71-12.73 12.73-12.73 3.4 0 6.6 1.32 9 3.73a12.66 12.66 0 0 1 3.72 9c0 7.02-5.71 12.73-12.46 12.9Zm6.99-9.54c-.38-.19-2.24-1.1-2.59-1.23-.34-.13-.59-.19-.84.19-.25.38-.97 1.23-1.19 1.48-.22.25-.44.28-.81.09-.38-.19-1.59-.58-3.03-1.85-1.12-1-1.88-2.24-2.1-2.62-.22-.38-.02-.58.17-.77.17-.17.38-.44.56-.66.19-.22.25-.38.38-.63.12-.25.06-.47-.03-.66-.09-.19-.84-2.03-1.16-2.78-.31-.74-.63-.63-.84-.64l-.72-.02c-.25 0-.66.09-1 .47-.34.38-1.31 1.28-1.31 3.13 0 1.84 1.34 3.62 1.53 3.88.19.25 2.64 4.03 6.39 5.65.89.38 1.58.61 2.13.78.89.28 1.7.24 2.34.14.71-.11 2.24-.91 2.56-1.78.31-.88.31-1.63.22-1.78-.09-.16-.34-.25-.72-.44Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="logo" onclick="navigate('home');return false;">
+      <svg viewBox="0 0 40 40" fill="none">
+        <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      InboxElevate
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="navigate('home');return false;" data-page="home">Start</a></li>
+      <li><a href="#" onclick="navigate('services');return false;" data-page="services">Leistungen</a></li>
+      <li><a href="#" onclick="navigate('process');return false;" data-page="process">Prozess</a></li>
+      <li><a href="#" onclick="navigate('about');return false;" data-page="about">Über uns</a></li>
+      <li><a href="#" onclick="navigate('tips');return false;" data-page="tips">Tipps</a></li>
+      <li><a href="#" onclick="navigate('contact');return false;" class="nav-cta" data-page="contact">Kontakt <span class="nav-arrow">→</span></a></li>
+    </ul>
+    <button class="ham" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <a href="#" onclick="navigate('home');toggleMob();return false;">Start</a>
+    <a href="#" onclick="navigate('services');toggleMob();return false;">Leistungen</a>
+    <a href="#" onclick="navigate('process');toggleMob();return false;">Prozess</a>
+    <a href="#" onclick="navigate('about');toggleMob();return false;">Über uns</a>
+    <a href="#" onclick="navigate('tips');toggleMob();return false;">Tipps</a>
+    <a href="#" onclick="navigate('contact');toggleMob();return false;" style="color:var(--green)">Kontakt →</a>
+  </div>
+
+  <!-- ══════════════════ HOME PAGE ══════════════════ -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label sr">Performance Marketing · Webentwicklung · Sicherheitsbranche</div>
+        <h1 class="hero-h1 sr" data-d="1">
+          <span id="tw-line1">Mehr qualifizierte</span><br>
+          <span id="tw-line2">Anfragen für</span><br>
+          <span class="hero-tw-line"><span id="tw-text"></span><span class="tw-cursor"></span></span>
+        </h1>
+        <div class="hero-sub-row">
+          <p class="hero-p sr" data-d="2">Wir unterstützen Sicherheitsdienste und Anbieter für Alarmanlagen dabei, planbar neue Anfragen und Bewerbungen zu gewinnen.</p>
+          <div class="hero-actions sr" data-d="3">
+            <div class="btn-pulse-wrap">
+              <a href="#" onclick="navigate('contact');return false;" class="btn-ink">
+                Kostenlosen Marketing-Check anfordern
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <a href="#" onclick="navigate('services');return false;" class="btn-ghost">
+              Leistungen entdecken <span class="btn-arrow">→</span>
+            </a>
+          </div>
         </div>
-    </header>
-    
-    <main class="container">
-        <div class="tips-filters" role="toolbar" aria-label="Sicherheitstipps Filter">
-            <button class="tips-filter-btn active" data-cat="Alle" role="button" tabindex="0">Alle</button>
-            <button class="tips-filter-btn" data-cat="Zugangskontrolle" role="button" tabindex="0">Zugangskontrolle</button>
-            <button class="tips-filter-btn" data-cat="Physische Sicherheit" role="button" tabindex="0">Physische Sicherheit</button>
-            <button class="tips-filter-btn" data-cat="Cybersicherheit" role="button" tabindex="0">Cybersicherheit</button>
-            <button class="tips-filter-btn" data-cat="Personal" role="button" tabindex="0">Personal</button>
+      </div>
+
+      <!-- Marquee -->
+      <div class="marquee-band">
+        <div class="marquee-track">
+          <span>Google Ads</span><span class="dot">·</span>
+          <span>Meta Ads</span><span class="dot">·</span>
+          <span>Webseiten für Sicherheitsfirmen</span><span class="dot">·</span>
+          <span>Alarmanlagen-Leads</span><span class="dot">·</span>
+          <span>Objektschutz</span><span class="dot">·</span>
+          <span>Revierdienst</span><span class="dot">·</span>
+          <span>Sicherheitsmitarbeiter gewinnen</span><span class="dot">·</span>
+          <span>Google Ads</span><span class="dot">·</span>
+          <span>Meta Ads</span><span class="dot">·</span>
+          <span>Webseiten für Sicherheitsfirmen</span><span class="dot">·</span>
+          <span>Alarmanlagen-Leads</span><span class="dot">·</span>
+          <span>Objektschutz</span><span class="dot">·</span>
+          <span>Revierdienst</span><span class="dot">·</span>
+          <span>Sicherheitsmitarbeiter gewinnen</span><span class="dot">·</span>
         </div>
-        
-        <div class="tips-count" id="tipsCount">12 Tipps angezeigt</div>
-        
-        <div class="tips-grid" id="tipsGrid">
-            <!-- Tips werden hier dynamisch eingefügt -->
+      </div>
+    </section>
+
+    <!-- Animated Stats Strip -->
+    <div class="home-stats" id="homeStats">
+      <div class="home-stat">
+        <div class="n"><span class="stat-counter" data-target="48" data-suffix="h">0h</span></div>
+        <div class="l">Reaktionszeit</div>
+      </div>
+      <div class="home-stat">
+        <div class="n"><span class="stat-counter" data-target="100" data-suffix="%">0%</span></div>
+        <div class="l">Fokus auf dich</div>
+      </div>
+      <div class="home-stat">
+        <div class="n"><span class="stat-counter" data-target="3" data-suffix="×">0×</span></div>
+        <div class="l">Plattformen</div>
+      </div>
+      <div class="home-stat">
+        <div class="n"><span class="stat-counter" data-target="5" data-suffix=" – 10" data-prefix="">5 – 10</span></div>
+        <div class="l">Werktage bis Live</div>
+      </div>
+    </div>
+
+    <!-- Intro strip -->
+    <div class="intro-strip">
+      <div class="intro-cell sr spotlight-card hover-underline-card" onclick="navigate('services');return false;" onkeydown="handleKeyAction(event, function(){ navigate('services'); })" role="button" tabindex="0" style="cursor:none;">
+        <div class="intro-num">01 / Webseiten</div>
+        <h3>Webseiten, die Anfragen bringen</h3>
+        <p>Speziell für Sicherheitsunternehmen: Notrufnummer sichtbar, Vertrauen aufgebaut, Besucher zu Kunden gemacht.</p>
+      </div>
+      <div class="intro-cell sr spotlight-card hover-underline-card" data-d="1" onclick="navigate('services');return false;" onkeydown="handleKeyAction(event, function(){ navigate('services'); })" role="button" tabindex="0" style="cursor:none;">
+        <div class="intro-num">02 / Paid Ads</div>
+        <h3>Ads mit echtem Ergebnis</h3>
+        <p>Google Search und Meta Ads gezielt für Alarmanlagen-Anfragen, Objektschutz-Leads und Bewerbungen von Sicherheitsmitarbeitern.</p>
+      </div>
+      <div class="intro-cell sr spotlight-card hover-underline-card" data-d="2" onclick="navigate('services');return false;" onkeydown="handleKeyAction(event, function(){ navigate('services'); })" role="button" tabindex="0" style="cursor:none;">
+        <div class="intro-num">03 / Strategie</div>
+        <h3>Strategie vor Ausführung</h3>
+        <p>Jede Maßnahme beginnt mit einem Plan. Wir denken zuerst, dann machen wir — und das merkt man im Ergebnis.</p>
+      </div>
+    </div>
+
+    <!-- Problem Section -->
+    <section style="padding:5rem clamp(1.5rem,5vw,4rem);background:var(--ink);color:var(--cream);">
+      <p style="font-family:var(--M);font-size:.7rem;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:1.5rem;">Kommt dir das bekannt vor?</p>
+      <h2 style="font-family:var(--H);font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;margin-bottom:2.5rem;">Probleme, die wir<br><span style="color:var(--green)">kennen und lösen.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.6rem;">
+          <div style="font-size:1.3rem;margin-bottom:.8rem;">📉</div>
+          <p style="font-size:.92rem;line-height:1.65;color:rgba(245,243,238,.75);">Deine Website bringt kaum Anfragen</p>
         </div>
-    </main>
-    
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.6rem;">
+          <div style="font-size:1.3rem;margin-bottom:.8rem;">🎯</div>
+          <p style="font-size:.92rem;line-height:1.65;color:rgba(245,243,238,.75);">Du bekommst zu viele unqualifizierte Anfragen</p>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.6rem;">
+          <div style="font-size:1.3rem;margin-bottom:.8rem;">👷</div>
+          <p style="font-size:.92rem;line-height:1.65;color:rgba(245,243,238,.75);">Du findest schwer neue Sicherheitsmitarbeiter</p>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.6rem;">
+          <div style="font-size:1.3rem;margin-bottom:.8rem;">🔍</div>
+          <p style="font-size:.92rem;line-height:1.65;color:rgba(245,243,238,.75);">Deine Wettbewerber sind bei Google sichtbarer als du</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <p class="page-label sr">Social Proof</p>
+      <div class="home-faq-copy sr" data-d="1" style="margin-bottom:2rem;">
+        <h2 style="font-family:var(--H);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;">Was Sicherheitsunternehmen an der Zusammenarbeit <span style="color:var(--green);">wirklich schaetzen.</span></h2>
+      </div>
+      <div class="testimonials-wrap">
+        <article class="testimonial-card sr spotlight-card hover-underline-card">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p>"Endlich eine Agentur, die unsere Branche versteht. Die neue Website filtert unpassende Anfragen raus und bringt genau die Gespraeche, die unser Vertrieb braucht."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Markus M.</div>
+            <div class="testimonial-type">Objektschutz</div>
+          </div>
+        </article>
+        <article class="testimonial-card sr spotlight-card hover-underline-card" data-d="1">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p>"Unsere Google Ads liefen vorher breit und teuer. Jetzt kommen deutlich qualifiziertere Anfragen aus genau den Regionen, in denen wir aktiv wachsen wollen."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Sabrina M.</div>
+            <div class="testimonial-type">Alarmanlagen</div>
+          </div>
+        </article>
+        <article class="testimonial-card sr spotlight-card hover-underline-card" data-d="2">
+          <div class="testimonial-stars" aria-label="5 von 5 Sternen"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p>"Wir wollten keinen Bauchladen, sondern Klarheit. InboxElevate hat Messaging, Landingpage und Formular so strukturiert, dass unsere Pipeline viel ruhiger planbar wurde."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Daniel K.</div>
+            <div class="testimonial-type">Revierdienst</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Big CTA section -->
+    <section
+      style="padding:6rem clamp(1.5rem,5vw,4rem); display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; border-top:1px solid var(--border);">
+      <div>
+        <p class="page-label sr">Warum Sicherheitsfirmen mit uns arbeiten</p>
+        <h2 class="sr"
+          style="font-family:var(--H);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;"
+          data-d="1">
+          Fester Ansprechpartner.<br>Klare Ergebnisse.<br><span style="color:var(--green)">Kein Blabla.</span>
+        </h2>
+        <p class="sr" style="color:var(--muted);margin-top:1.2rem;line-height:1.75;max-width:420px;" data-d="2">Wir bauen unsere Expertise in der Sicherheitsbranche gezielt auf — mit Fokus auf echte Partnerschaften statt schnellen Abschlüssen.</p>
+        <a href="#" onclick="navigate('about');return false;" class="btn-ghost sr"
+          style="margin-top:2rem;display:inline-flex;" data-d="3">Mehr über uns erfahren <span
+            class="btn-arrow">→</span></a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="sr-r">
+        <div style="background:var(--ink);color:var(--cream);border-radius:20px;padding:2rem;grid-column:span 2;">
+          <div style="font-family:var(--H);font-size:2.5rem;font-weight:800;letter-spacing:-.04em;">Direkt.
+            Transparent.<br><span style="color:var(--green)">Ergebnisorientiert.</span></div>
+          <p style="color:rgba(245,243,238,.5);font-size:.85rem;margin-top:.8rem;">Fester Ansprechpartner statt wechselnder Projektteams. DSGVO-konformes Tracking. Hosting in der EU.</p>
+        </div>
+        <div
+          style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem;text-align:center;">
+          <div style="font-family:var(--H);font-size:2.2rem;font-weight:800;color:var(--green);letter-spacing:-.04em;">
+            48h</div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.3rem;">Reaktionszeit</p>
+        </div>
+        <div
+          style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem;text-align:center;">
+          <div style="font-family:var(--H);font-size:2.2rem;font-weight:800;color:var(--ink);letter-spacing:-.04em;">100%
+          </div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.3rem;">Fokus auf dich</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-faq-grid">
+        <div class="home-faq-copy">
+          <p class="page-label sr">FAQ</p>
+          <h2 class="sr" data-d="1" style="font-family:var(--H);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;margin-bottom:1rem;">Fragen, die im Erstgespraech fast immer <span style="color:var(--green);">auf den Tisch kommen.</span></h2>
+          <p class="sr" data-d="2">Von Preisrahmen bis Erwartungsmanagement: hier sind die Punkte, die B2B-Sicherheitsfirmen vor dem Start meistens klaeren wollen.</p>
+        </div>
+        <div class="home-faq-list sr-r">
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Mit welchem Budget sollten wir rechnen? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Das haengt vom Kanal und vom Ziel ab. Fuer Websites arbeiten wir projektbasiert, fuer Ads mit fixer Betreuung plus Mediabudget. Im Erstgespraech sagen wir dir offen, was fuer eure Ausgangslage realistisch ist.</p></div></div>
+          </div>
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Wie lange laeuft eine Zusammenarbeit typischerweise? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Webprojekte sind klar abgegrenzt. Bei Ads ist eine Laufzeit von mehreren Monaten sinnvoll, weil wir Kampagnen erst aufsetzen, dann Daten sammeln und anschliessend sauber optimieren.</p></div></div>
+          </div>
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Wann sehen wir erste Ergebnisse? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Erste Signale sehen wir oft schon in den ersten Wochen. Belastbare Aussagen kommen in der Regel nach der ersten Lernphase, sobald genug Daten fuer Optimierungen vorliegen.</p></div></div>
+          </div>
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Arbeitet ihr auch mit bestehenden Websites oder Accounts? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Ja. Wenn vorhandene Assets Potenzial haben, bauen wir darauf auf. Wir pruefen zuerst, was tragfaehig ist und was euch eher bremst, statt alles pauschal neu zu machen.</p></div></div>
+          </div>
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Wie stark muessen wir intern eingebunden sein? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Wir brauchen zu Beginn klare Ziele, Einblicke in eure Leistungen und schnelles Feedback. Danach halten wir die Schleifen bewusst schlank, damit eure Mannschaft im Alltag nicht ausgebremst wird.</p></div></div>
+          </div>
+          <div class="faq-card hover-underline-card">
+            <button class="faq-q" onclick="toggleFaq(this)">Was unterscheidet euch von allgemeinen Marketing-Agenturen? <span class="faq-ico">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"><p>Wir denken Kommunikation, Vertrauen und Lead-Qualitaet speziell fuer Sicherheitsunternehmen. Dadurch sehen Landingpages, Angebote und Kampagnen bei uns nicht generisch aus, sondern treffen eure reale Vertriebsarbeit.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section style="background:var(--ink);padding:5rem clamp(1.5rem,5vw,4rem);text-align:center;">
+      <p
+        style="font-family:var(--M);font-size:.7rem;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:1.5rem;">
+        Bereit loszulegen?</p>
+      <h2
+        style="font-family:var(--H);font-size:clamp(2rem,5vw,4.5rem);font-weight:800;letter-spacing:-.05em;color:var(--cream);line-height:1.05;">
+        Erstgespräch.<br>Kostenlos. Unverbindlich.</h2>
+      <p style="color:rgba(245,243,238,.45);margin-top:1.2rem;font-size:.95rem;">30 Minuten, die dein Business verändern
+        könnten.</p>
+      <a href="#" onclick="navigate('contact');return false;" class="btn-ink"
+        style="margin-top:2.5rem;display:inline-flex;background:var(--green);color:var(--ink);">Kostenlosen Marketing-Check anfordern →</a>
+    </section>
+
     <footer>
-        <div class="container">
-            <p>© 2023 Sicherheitstipps für Unternehmen | Alle Rechte vorbehalten</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
         </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5>
+          <a href="#" onclick="navigate('services');return false;">Webentwicklung</a>
+          <a href="#" onclick="navigate('services');return false;">Meta Ads</a>
+          <a href="#" onclick="navigate('services');return false;">Google Ads</a>
+          <a href="#" onclick="navigate('services');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Agentur</h5>
+          <a href="#" onclick="navigate('about');return false;">Über uns</a>
+          <a href="#" onclick="navigate('process');return false;">Prozess</a>
+          <a href="#" onclick="navigate('contact');return false;">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a>
+          <a href="#" onclick="navigate('contact');return false;">Anfrage stellen</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate. Alle Rechte vorbehalten.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/inboxelevate/" target="_blank" class="soc">in</a>
+          <a href="#" class="soc">ig</a>
+          <a href="mailto:david@inbox-elevate.de" class="soc">✉</a>
+        </div>
+      </div>
     </footer>
+  </div>
 
-    <script>
-        // Sicherheitstipps Daten
-        const tipsData = [
-            {
-                id: 1,
-                title: "Zugangskontrolle verbessern",
-                category: "Zugangskontrolle",
-                icon: "🔒",
-                content: "Implementieren Sie eine mehrstufige Zugangskontrolle mit Kartenlesern, Biometrie oder Passwörtern. Regelmäßige Überprüfung der Zugriffsberechtigungen ist entscheidend.",
-                details: [
-                    "Verwenden Sie Kartenleser oder Biometrie für Zugangskontrolle",
-                    "Regelmäßige Überprüfung der Zugriffsberechtigungen",
-                    "Erstellen Sie ein Protokoll aller Zugriffe",
-                    "Implementieren Sie Notfallverfahren für den Zugang"
-                ]
-            },
-            {
-                id: 2,
-                title: "Physische Sicherheit stärken",
-                category: "Physische Sicherheit",
-                icon: "🛡️",
-                content: "Schützen Sie Ihr Unternehmen vor physischen Bedrohungen durch effektive Sicherheitsmaßnahmen. Dies schließt Wachdienste, Kameras und Sicherheitssysteme ein.",
-                details: [
-                    "Installieren Sie Sicherheitskameras an strategischen Stellen",
-                    "Einrichten eines Wachdienstes für kritische Bereiche",
-                    "Verwenden Sie robuste Türen und Fenster",
-                    "Implementieren Sie einen Notfallplan"
-                ]
-            },
-            {
-                id: 3,
-                title: "Cybersicherheit implementieren",
-                category: "Cybersicherheit",
-                icon: "💻",
-                content: "Schützen Sie Ihre Daten vor digitalen Bedrohungen durch Firewall-Systeme, Verschlüsselung und regelmäßige Sicherheitsupdates.",
-                details: [
-                    "Verwenden Sie Firewalls und Antivirus-Software",
-                    "Implementieren Sie Datenverschlüsselung",
-                    "Führen Sie regelmäßige Sicherheitsupdates durch",
-                    "Schulen Sie Mitarbeiter über Phishing-Attacken"
-                ]
-            },
-            {
-                id: 4,
-                title: "Personal Sicherheitstraining",
-                category: "Personal",
-                icon: "🎓",
-                content: "Regelmäßige Schulungen für Mitarbeiter sind entscheidend für die Sicherheit Ihres Unternehmens. Informieren Sie sich über Sicherheitsrisiken und -verfahren.",
-                details: [
-                    "Durchführung von Sicherheitstrainings für Mitarbeiter",
-                    "Regelmäßige Updates über Sicherheitsrisiken",
-                    "Simulation von Notfällen",
-                    "Erstellen von Sicherheitsrichtlinien"
-                ]
-            },
-            {
-                id: 5,
-                title: "Risikobewertung durchführen",
-                category: "Physische Sicherheit",
-                icon: "📊",
-                content: "Regelmäßige Risikobewertungen helfen, potenzielle Sicherheitslücken zu identifizieren und gezielte Maßnahmen zu ergreifen.",
-                details: [
-                    "Identifizierung von Sicherheitsrisiken",
-                    "Bewertung der Wahrscheinlichkeit und Auswirkung",
-                    "Priorisierung von Sicherheitsmaßnahmen",
-                    "Regelmäßige Überprüfung der Risiken"
-                ]
-            },
-            {
-                id: 6,
-                title: "Notfallplanung",
-                category: "Personal",
-                icon: "🚨",
-                content: "Ein guter Notfallplan ist entscheidend für die Reaktion auf Sicherheitsvorfälle. Stellen Sie sicher, dass alle Mitarbeiter wissen, wie sie reagieren sollen.",
-                details: [
-                    "Erstellen eines Notfallplans für verschiedene Szenarien",
-                    "Schulen Sie Mitarbeiter über Notfallverfahren",
-                    "Regelmäßige Übungen durchführen",
-                    "Kontaktinformationen für Notfälle bereitstellen"
-                ]
-            },
-            {
-                id: 7,
-                title: "Zugangskontrolle für Mitarbeiter",
-                category: "Zugangskontrolle",
-                icon: "👥",
-                content: "Implementieren Sie eine effektive Zugangskontrolle für Mitarbeiter, um sicherzustellen, dass nur autorisierte Personen bestimmte Bereiche betreten können.",
-                details: [
-                    "Verwenden Sie Zugangskarten oder Biometrie",
-                    "Regelmäßige Überprüfung der Zugriffsberechtigungen",
-                    "Implementieren Sie Zeitsteuerung für Zugänge",
-                    "Erstellen Sie Protokolle für alle Zugriffe"
-                ]
-            },
-            {
-                id: 8,
-                title: "Datenverschlüsselung",
-                category: "Cybersicherheit",
-                icon: "🔐",
-                content: "Verschlüsseln Sie sensible Daten, um sie vor unbefugtem Zugriff zu schützen. Dies gilt sowohl für gespeicherte als auch für übertragene Daten.",
-                details: [
-                    "Verwenden Sie moderne Verschlüsselungsalgorithmen",
-                    "Implementieren Sie Verschlüsselung für alle Daten",
-                    "Regelmäßige Überprüfung der Verschlüsselung",
-                    "Schulung der Mitarbeiter über Datenverschlüsselung"
-                ]
-            },
-            {
-                id: 9,
-                title: "Sicherheitsaudit durchführen",
-                category: "Physische Sicherheit",
-                icon: "🔍",
-                content: "Führen Sie regelmäßige Sicherheitsaudits durch, um Schwachstellen in Ihrem Sicherheitssystem zu identifizieren und zu beheben.",
-                details: [
-                    "Regelmäßige Überprüfung aller Sicherheitssysteme",
-                    "Identifizierung von Schwachstellen",
-                    "Dokumentation der Ergebnisse",
-                    "Implementierung von Verbesserungsmaßnahmen"
-                ]
-            },
-            {
-                id: 10,
-                title: "Zugangskontrolle für Gäste",
-                category: "Zugangskontrolle",
-                icon: "🙋",
-                content: "Implementieren Sie spezielle Zugangskontrollmaßnahmen für Gäste, um die Sicherheit Ihres Unternehmens zu gewährleisten.",
-                details: [
-                    "Registrierung von Gästen",
-                    "Zugangskontrolle für Gäste",
-                    "Begrenzung des Aufenthalts",
-                    "Überwachung der Gästeaktivitäten"
-                ]
-            },
-            {
-                id: 11,
-                title: "Cybersicherheit für mobile Geräte",
-                category: "Cybersicherheit",
-                icon: "📱",
-                content: "Schützen Sie mobile Geräte vor Cyberbedrohungen durch sichere Konfiguration und regelmäßige Updates.",
-                details: [
-                    "Implementieren Sie mobile Geräte Management (MDM)",
-                    "Regelmäßige Sicherheitsupdates",
-                    "Verwenden Sie sichere Netzwerke",
-                    "Schulung der Mitarbeiter über mobile Sicherheit"
-                ]
-            },
-            {
-                id: 12,
-                title: "Sicherheitskultur fördern",
-                category: "Personal",
-                icon: "🤝",
-                content: "Fördern Sie eine Sicherheitskultur im Unternehmen, in der Sicherheit für alle Mitarbeiter eine Priorität ist.",
-                details: [
-                    "Regelmäßige Sicherheitskommunikation",
-                    "Beteiligung aller Mitarbeiter an Sicherheitsmaßnahmen",
-                    "Belohnung für Sicherheitsbewusstsein",
-                    "Erstellen eines Sicherheitsmanagementsystems"
-                ]
-            }
-        ];
+  <!-- ══════════════════ SERVICES PAGE ══════════════════ -->
+  <div id="page-services" class="page">
+    <div class="page-hero">
+      <p class="page-label">Was wir anbieten</p>
+      <h1 class="page-h1">Leistungen für <span>Sicherheitsunternehmen.</span></h1>
+      <p class="page-sub">Webseiten und Ads, die speziell auf die Anforderungen von Sicherheitsdiensten und Alarmanlagen-Anbietern ausgerichtet sind.</p>
+    </div>
 
-        // Filter-Buttons
-        const filterButtons = document.querySelectorAll('.tips-filter-btn');
-        const tipsGrid = document.getElementById('tipsGrid');
-        const tipsCount = document.getElementById('tipsCount');
+    <div class="services-categories">
 
-        // Aktuelle Filterkategorie
-        let currentFilter = 'Alle';
+      <!-- ═══ KATEGORIE 1: WEBSEITEN ═══ -->
+      <div class="svc-cat">
+        <div class="svc-cat-head">
+          <div class="svc-cat-icon">🌐</div>
+          <h2>Webseiten für Sicherheitsunternehmen</h2>
+          <p>Webseiten, die Vertrauen aufbauen und Anfragen auslösen — mit Notrufnummer, Zertifikaten und lokaler SEO.</p>
+        </div>
 
-        // Funktion zum Rendern der Tipps
-        function renderTips(tips) {
-            tipsGrid.innerHTML = '';
-            
-            if (tips.length === 0) {
-                tipsGrid.innerHTML = '<p>Keine Tipps gefunden.</p>';
-                tipsCount.textContent = '0 Tipps angezeigt';
-                return;
-            }
-            
-            tipsCount.textContent = `${tips.length} Tipps angezeigt`;
-            
-            tips.forEach(tip => {
-                const tipCard = document.createElement('div');
-                tipCard.className = 'tip-card';
-                
-                // Inhalt des Tipps
-                tipCard.innerHTML = `
-                    <div class="tip-header">
-                        <span class="tip-icon">${tip.icon}</span>
-                        <h3 class="tip-title">${tip.title}</h3>
-                    </div>
-                    <div class="tip-body">
-                        <div class="tip-category">${tip.category}</div>
-                        <div class="tip-body-inner">
-                            <p>${tip.content}</p>
-                        </div>
-                        <div class="tip-content">
-                            <p>${tip.content}</p>
-                            <ul>
-                                ${tip.details.map(detail => `<li>${detail}</li>`).join('')}
-                            </ul>
-                        </div>
-                        <div class="tip-action">
-                            <button class="tip-action-btn">Mehr erfahren</button>
-                            <button class="tip-expand-btn" aria-label="Inhalt ausklappen">▼</button>
-                        </div>
-                    </div>
-                `;
-                
-                tipsGrid.appendChild(tipCard);
-                
-                // Event Listener für den Expand-Button
-                const expandBtn = tipCard.querySelector('.tip-expand-btn');
-                const tipContent = tipCard.querySelector('.tip-content');
-                
-                expandBtn.addEventListener('click', () => {
-                    tipContent.classList.toggle('show');
-                    expandBtn.textContent = tipContent.classList.contains('show') ? '▲' : '▼';
-                });
-            });
-        }
+        <div class="svc-panel active" id="svc-web">
+          <div class="panel-features">
+            <div class="panel-feat">
+              <h4>Notruf & Erreichbarkeit</h4>
+              <p>Notrufnummer und 24/7-Erreichbarkeit sofort sichtbar — das erste, was ein Besucher sehen muss.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Vertrauen aufbauen</h4>
+              <p>Zertifikate, Bewertungen und Referenzen prominent platziert — damit Besucher sofort Vertrauen fassen.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Lokale SEO</h4>
+              <p>Gefunden werden für „Sicherheitsdienst + Stadt" — damit du vor deinen Wettbewerbern erscheinst.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Strukturierte Seiten</h4>
+              <p>Eigene Seiten für Alarmanlagen, Objektschutz, Revierdienst & mehr — klar strukturiert für Google und Besucher.</p>
+            </div>
+          </div>
+          <div class="panel-cta-bar">
+            <a href="#" onclick="navigateWithService('contact','Webseiten-Entwicklung');return false;"
+              class="btn-ink">Kostenlosen Marketing-Check anfordern →</a>
+          </div>
+        </div>
+      </div>
 
-        // Filter-Funktion
-        function filterTips(category) {
-            currentFilter = category;
-            
-            if (category === 'Alle') {
-                renderTips(tipsData);
-            } else {
-                const filteredTips = tipsData.filter(tip => tip.category === category);
-                renderTips(filteredTips);
-            }
-            
-            // Aktuelle Filter-Button aktivieren
-            filterButtons.forEach(btn => {
-                if (btn.dataset.cat === category) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
+      <!-- ═══ KATEGORIE 2: ADS ═══ -->
+      <div class="svc-cat">
+        <div class="svc-cat-head">
+          <div class="svc-cat-icon">📣</div>
+          <h2>Paid Ads</h2>
+          <p>Google Search und Meta Ads gezielt für Alarmanlagen-Anfragen, Objektschutz-Leads und Bewerbungen von Sicherheitsmitarbeitern.</p>
+        </div>
 
-        // Event Listener für Filter-Buttons
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterTips(button.dataset.cat);
-            });
+        <!-- Sub-Tab-Bar -->
+        <div class="svc-cat-tabs" id="adsTabs">
+          <button class="svc-cat-tab active" onclick="showAdsTab('meta',this)"><span class="tab-dot"></span>Meta
+            Ads</button>
+          <button class="svc-cat-tab" onclick="showAdsTab('google',this)"><span class="tab-dot"></span>Google
+            Ads</button>
+          <button class="svc-cat-tab" onclick="showAdsTab('linkedin',this)"><span class="tab-dot"></span>LinkedIn
+            Ads</button>
+        </div>
+
+        <!-- Meta Panel -->
+        <div class="svc-panel active" id="svc-meta">
+          <div class="panel-features">
+            <div class="panel-feat">
+              <h4>Anfragen für Alarmanlagen</h4>
+              <p>Gezielte Kampagnen für Privatpersonen und Unternehmen, die eine Alarmanlage installieren lassen wollen.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Leads für Objektschutz</h4>
+              <p>Wir sprechen Entscheider an, die Objektschutz oder Revierdienst für ihr Unternehmen suchen.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Bewerbungen gewinnen</h4>
+              <p>Recruiting-Kampagnen für Sicherheitsmitarbeiter — auf Facebook und Instagram, wo deine Zielgruppe aktiv ist.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Qualifizierte Klicks</h4>
+              <p>Kein Budget für unqualifizierte Klicks — wir optimieren kontinuierlich auf echte Anfragen.</p>
+            </div>
+          </div>
+          <div class="panel-platforms">
+            <h4>Plattformen</h4>
+            <div class="plat-pills"><span class="plat-pill">Facebook</span><span class="plat-pill">Instagram</span><span
+                class="plat-pill">Reels Ads</span><span class="plat-pill">Stories</span></div>
+          </div>
+          <div class="panel-cta-bar"><a href="#"
+              onclick="navigateWithService('contact','Meta Ads (Facebook/Instagram)');return false;"
+              class="btn-ink">Kostenlosen Marketing-Check anfordern →</a></div>
+        </div>
+
+        <!-- Google Panel -->
+        <div class="svc-panel" id="svc-google">
+          <div class="panel-features">
+            <div class="panel-feat">
+              <h4>„Sicherheitsdienst + Stadt"</h4>
+              <p>Wir schalten dich genau dann, wenn jemand aktiv nach einem Sicherheitsdienst in deiner Region sucht.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Alarmanlagen-Anfragen</h4>
+              <p>Keyword-Strategie und Anzeigentexte speziell für Alarmanlagen-Installationen und Wartungsverträge.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Retargeting</h4>
+              <p>Besucher, die deine Seite verlassen haben, werden gezielt wieder angesprochen — bis sie anfragen.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Conversion-Tracking</h4>
+              <p>Sauberes Setup von GA4 und Google Tag — damit jeder Lead korrekt erfasst und bewertet wird.</p>
+            </div>
+          </div>
+          <div class="panel-platforms">
+            <h4>Formate</h4>
+            <div class="plat-pills"><span class="plat-pill">Search</span><span class="plat-pill">Display</span><span
+                class="plat-pill">Retargeting</span><span class="plat-pill">Performance Max</span></div>
+          </div>
+          <div class="panel-cta-bar"><a href="#" onclick="navigateWithService('contact','Google Ads');return false;"
+              class="btn-ink">Kostenlosen Marketing-Check anfordern →</a></div>
+        </div>
+
+        <!-- LinkedIn Panel -->
+        <div class="svc-panel" id="svc-linkedin">
+          <div class="panel-features">
+            <div class="panel-feat">
+              <h4>B2B-Objektschutz</h4>
+              <p>Für Sicherheitsunternehmen mit B2B-Fokus: Entscheider in Unternehmen gezielt ansprechen.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Sponsored Content</h4>
+              <p>Anzeigen im Feed für Facility Manager, Immobilienverwalter und Unternehmensverantwortliche.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Company Targeting</h4>
+              <p>Zielgruppenaufbau nach Branche, Unternehmensgröße und Job-Titel — für qualifizierte B2B-Leads.</p>
+            </div>
+            <div class="panel-feat">
+              <h4>Hinweis</h4>
+              <p>LinkedIn eignet sich vor allem für B2B-Sicherheitsdienstleistungen. Für Privatkundengeschäft empfehlen wir Google und Meta.</p>
+            </div>
+          </div>
+          <div class="panel-platforms">
+            <h4>Ideal für</h4>
+            <div class="plat-pills"><span class="plat-pill">B2B</span><span class="plat-pill">Objektschutz</span><span
+                class="plat-pill">Facility Management</span><span class="plat-pill">Großkunden</span></div>
+          </div>
+          <div class="panel-cta-bar"><a href="#" onclick="navigateWithService('contact','LinkedIn Ads');return false;"
+              class="btn-ink">Kostenlosen Marketing-Check anfordern →</a></div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5><a href="#" onclick="navigate('home');return false;">Start</a><a href="#"
+            onclick="navigate('process');return false;">Prozess</a><a href="#"
+            onclick="navigate('about');return false;">Über uns</a><a href="#"
+            onclick="navigate('contact');return false;">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5><a href="#" onclick="showService('web');return false;">Webentwicklung</a><a href="#"
+            onclick="showService('meta');return false;">Meta Ads</a><a href="#"
+            onclick="showService('google');return false;">Google Ads</a><a href="#"
+            onclick="showService('linkedin');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5><a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a><a
+            href="https://www.linkedin.com/company/inboxelevate/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate. Alle Rechte vorbehalten.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/inboxelevate/" target="_blank" class="soc">in</a>
+          <a href="#" class="soc">ig</a>
+          <a href="mailto:david@inbox-elevate.de" class="soc">✉</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ══════════════════ PROCESS PAGE ══════════════════ -->
+  <div id="page-process" class="page">
+    <div class="page-hero">
+      <p class="page-label">Wie wir arbeiten</p>
+      <h1 class="page-h1">Klar. Strukturiert.<br><span>Ohne Überraschungen.</span></h1>
+      <p class="page-sub">Von der ersten Anfrage bis zur laufenden Optimierung — unser Prozess ist transparent und
+        nachvollziehbar.</p>
+    </div>
+
+    <div class="process-timeline">
+      <div class="timeline-item sr">
+        <div class="tl-num">01</div>
+        <div class="tl-content">
+          <h3>Erstkontakt & Kennenlernen</h3>
+          <p>Du schreibst uns über das Kontaktformular oder per Mail. Innerhalb von 48 Stunden melden wir uns mit einem
+            Terminvorschlag für ein kostenloses 30-minütiges Erstgespräch per Video-Call. Wir lernen dein Unternehmen,
+            deine Ziele und dein Budget kennen — und du lernst uns kennen. Kein Verkaufsdruck.</p>
+          <div class="tl-tags"><span class="tl-tag">Kostenlos</span><span class="tl-tag">30 min</span><span
+              class="tl-tag">Video-Call</span></div>
+        </div>
+      </div>
+      <div class="timeline-item sr" data-d="1">
+        <div class="tl-num">02</div>
+        <div class="tl-content">
+          <h3>Analyse & Strategie</h3>
+          <p>Wir schauen uns dein bestehendes Setup an — Website, Sichtbarkeit bei Google, Wettbewerber in deiner Region. Darauf aufbauend erstellen wir einen konkreten Vorschlag: Welche Kanäle? Welche Zielgruppen? Welche Budgetverteilung? Mit realistischen Erwartungswerten — keine aufgeblasenen Versprechen.</p>
+          <div class="tl-tags"><span class="tl-tag">Zielgruppenanalyse</span><span
+              class="tl-tag">Kanalauswahl</span><span class="tl-tag">Mediaplan</span></div>
+        </div>
+      </div>
+      <div class="timeline-item sr" data-d="2">
+        <div class="tl-num">03</div>
+        <div class="tl-content">
+          <h3>Setup & Launch</h3>
+          <p>Nach deiner Freigabe beginnen wir mit dem technischen Setup: Kampagnenstruktur, Tracking, Creatives (auf
+            Basis deines Materials), Landing Pages oder Webseite. Alles wird vor dem Launch gemeinsam abgestimmt.
+            Typischer Zeitraum bis zur ersten Live-Kampagne: 5–10 Werktage.</p>
+          <div class="tl-tags"><span class="tl-tag">Technisches Setup</span><span class="tl-tag">Tracking</span><span
+              class="tl-tag">5–10 Werktage</span></div>
+        </div>
+      </div>
+      <div class="timeline-item sr" data-d="3">
+        <div class="tl-num">04</div>
+        <div class="tl-content">
+          <h3>Optimierung & Skalierung</h3>
+          <p>Wir stellen sicher, dass dein Budget nicht in unqualifizierte Klicks fließt, sondern in echte Anfragen für Sicherheitsdienstleistungen. Wir analysieren wöchentlich Daten, testen Varianten und optimieren kontinuierlich. Erste aussagekräftige Ergebnisse sind nach 4–6 Wochen spürbar.</p>
+          <div class="tl-tags"><span class="tl-tag">A/B-Testing</span><span class="tl-tag">Wöchentliche
+              Analyse</span><span class="tl-tag">Reporting</span></div>
+        </div>
+      </div>
+      <div class="timeline-item sr" data-d="4">
+        <div class="tl-num">05</div>
+        <div class="tl-content">
+          <h3>Reporting & Kommunikation</h3>
+          <p>Regelmäßige Reports — klar und verständlich, ohne unnötigen Fachjargon. Je nach Paket wöchentlich oder
+            monatlich. Dazu steht dir dein persönlicher Ansprechpartner jederzeit für Rückfragen zur Verfügung. Du weißt
+            immer, wo dein Geld hingeht und was es bringt.</p>
+          <div class="tl-tags"><span class="tl-tag">Monatliche Reports</span><span class="tl-tag">Direkter
+              Kontakt</span><span class="tl-tag">Transparenz</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section style="background:var(--ink);padding:5rem clamp(1.5rem,5vw,4rem);text-align:center;">
+      <h2
+        style="font-family:var(--H);font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.05em;color:var(--cream);line-height:1.05;">
+        Starte mit einem<br><span style="color:var(--green)">kostenlosen Gespräch.</span></h2>
+      <p style="color:rgba(245,243,238,.5);margin-top:1rem;font-size:.95rem;">Kein Druck. Nur ein offenes Gespräch über
+        dein Business und wie wir helfen können.</p>
+      <a href="#" onclick="navigate('contact');return false;" class="btn-ink"
+        style="margin-top:2rem;display:inline-flex;background:var(--green);color:var(--ink);">Kostenlosen Marketing-Check anfordern →</a>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5><a href="#" onclick="navigate('home');return false;">Start</a><a href="#"
+            onclick="navigate('services');return false;">Leistungen</a><a href="#"
+            onclick="navigate('about');return false;">Über uns</a><a href="#"
+            onclick="navigate('contact');return false;">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5><a href="#" onclick="navigate('services');return false;">Webentwicklung</a><a href="#"
+            onclick="navigate('services');return false;">Meta Ads</a><a href="#"
+            onclick="navigate('services');return false;">Google Ads</a><a href="#"
+            onclick="navigate('services');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5><a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate.</p>
+        <div class="socials"><a href="https://www.linkedin.com/company/inboxelevate/" target="_blank"
+            class="soc">in</a><a href="#" class="soc">ig</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ══════════════════ ABOUT PAGE ══════════════════ -->
+  <div id="page-about" class="page">
+    <div class="about-grid">
+      <div class="about-left">
+        <div>
+          <p
+            style="font-family:var(--M);font-size:.68rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.5rem;">
+            Über InboxElevate</p>
+          <h2>Wir bauen unsere<br>Expertise in der<br><span>Sicherheitsbranche auf.</span></h2>
+          <p style="color:rgba(245,243,238,.5);margin-top:1.2rem;font-size:.95rem;line-height:1.7;">Kein aufgeblähtes Team, keine versteckten Gebühren. Was wir haben: Fokus auf echte Partnerschaften und messbare Ergebnisse — speziell für Sicherheitsunternehmen.</p>
+        </div>
+        <div class="about-manifesto">
+          <div class="manifesto-item">
+            <div class="m-label">Unser Versprechen</div>
+            <p>Fester Ansprechpartner statt wechselnder Projektteams — du weißt immer, mit wem du sprichst.</p>
+          </div>
+          <div class="manifesto-item">
+            <div class="m-label">Unsere Stärke</div>
+            <p>Klare, verständliche Reports statt Marketing-Blabla — auch wenn etwas nicht funktioniert.</p>
+          </div>
+          <div class="manifesto-item">
+            <div class="m-label">Unser Ansporn</div>
+            <p>DSGVO-konforme Tracking-Setups, Hosting in der EU — Sicherheit auch im Marketing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <p class="page-label">Was uns ausmacht</p>
+        <h2
+          style="font-family:var(--H);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;">
+          Warum Sicherheitsfirmen<br>mit uns arbeiten.</h2>
+        <p style="color:var(--muted);margin-top:1rem;font-size:.9rem;line-height:1.7;">Wir bauen unsere Expertise in der Sicherheitsbranche gezielt auf — mit Fokus auf echte Partnerschaften statt schnellen Abschlüssen.</p>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <h4>Fester Ansprechpartner</h4>
+            <p>Kein wechselndes Projektteam. Du hast immer eine direkte Ansprechperson, die dein Business kennt.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">📊</div>
+            <h4>Klare Reports</h4>
+            <p>Keine Buzzword-Reports. Klare Zahlen, klare Aussagen — auch wenn etwas nicht funktioniert.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚡</div>
+            <h4>Schnelle Reaktion</h4>
+            <p>Schnelle Reaktionszeiten, wenn es brennt — weil in der Sicherheitsbranche Verlässlichkeit zählt.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔒</div>
+            <h4>DSGVO-konform</h4>
+            <p>DSGVO-konforme Tracking-Setups und Hosting in der EU — Sicherheit auch im digitalen Marketing.</p>
+          </div>
+        </div>
+        <div class="about-stat-row">
+          <div class="astat">
+            <div class="n">48h</div>
+            <div class="l">Erste Antwort</div>
+          </div>
+          <div class="astat">
+            <div class="n">3×</div>
+            <div class="l">Plattformen</div>
+          </div>
+          <div class="astat">
+            <div class="n">100%</div>
+            <div class="l">Fokus auf dich</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="#" onclick="navigate('contact');return false;" class="btn-ink">Kostenlosen Marketing-Check anfordern →</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5><a href="#" onclick="navigate('home');return false;">Start</a><a href="#"
+            onclick="navigate('services');return false;">Leistungen</a><a href="#"
+            onclick="navigate('process');return false;">Prozess</a><a href="#"
+            onclick="navigate('contact');return false;">Kontakt</a>
+        </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5><a href="#" onclick="navigate('services');return false;">Webentwicklung</a><a href="#"
+            onclick="navigate('services');return false;">Meta & Google Ads</a><a href="#"
+            onclick="navigate('services');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5><a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a><a
+            href="https://www.linkedin.com/company/inboxelevate/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate.</p>
+        <div class="socials"><a href="https://www.linkedin.com/company/inboxelevate/" target="_blank"
+            class="soc">in</a><a href="#" class="soc">ig</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ══════════════════ CONTACT PAGE ══════════════════ -->
+  <div id="page-contact" class="page">
+    <div class="contact-split">
+      <div class="contact-left">
+        <p
+          style="font-family:var(--M);font-size:.68rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-bottom:1.5rem;position:relative;z-index:1;">
+          Kontakt aufnehmen</p>
+        <h2>Lass uns<br>gemeinsam <span>wachsen.</span></h2>
+        <p>Schreib uns kurz, worum es geht — wir melden uns innerhalb von 48 Stunden mit einer ehrlichen Einschätzung
+          und einem konkreten Vorschlag.</p>
+        <div class="contact-details">
+          <div class="cd-item">
+            <div class="cd-icon">✉️</div>
+            <a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a>
+          </div>
+          <div class="cd-item">
+            <div class="cd-icon">in</div>
+            <a href="https://www.linkedin.com/company/inboxelevate/" target="_blank">LinkedIn → InboxElevate</a>
+          </div>
+          <div class="cd-item">
+            <div class="cd-icon">📍</div>
+            <span>Deutschland · Remote-First</span>
+          </div>
+          <div class="cd-item">
+            <div class="cd-icon">🕐</div>
+            <span>Antwort innerhalb 48h</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <p class="page-label">Schreib uns</p>
+        <h2 style="font-family:var(--H);font-size:1.8rem;font-weight:800;letter-spacing:-.04em;margin-bottom:.5rem;">
+          Kostenlosen Marketing-Check anfordern</h2>
+        <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.5rem;">Wir zeigen dir konkret, wo du aktuell Anfragen verlierst.</p>
+
+        <div id="cForm">
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <input type="hidden" name="_replyto" value="david@inbox-elevate.de">
+            <input type="hidden" name="_subject" value="Neue Anfrage über InboxElevate.de">
+            <div class="f-row">
+              <div class="f-group"><label>Vorname</label><input type="text" name="vorname" placeholder="Max" required>
+              </div>
+              <div class="f-group"><label>Nachname</label><input type="text" name="nachname" placeholder="Mustermann"
+                  required></div>
+            </div>
+            <div class="f-group"><label>E-Mail-Adresse</label><input type="email" name="email"
+                placeholder="max@beispiel.de" required></div>
+            <div class="f-group"><label>Unternehmen (optional)</label><input type="text" name="unternehmen"
+                placeholder="Dein Unternehmen"></div>
+            <div class="f-group">
+              <label>Was interessiert dich?</label>
+              <select id="serviceSelect" name="interesse" required>
+                <option value="" disabled selected>Bitte wählen</option>
+                <option value="Webseiten-Entwicklung">Webseiten-Entwicklung</option>
+                <option value="Meta Ads (Facebook/Instagram)">Meta Ads (Facebook/Instagram)</option>
+                <option value="Google Ads">Google Ads</option>
+                <option value="LinkedIn Ads">LinkedIn Ads</option>
+                <option value="Komplettpaket (Webseite + Ads)">Komplettpaket (Webseite + Ads)</option>
+                <option value="Strategie &amp; Beratung">Strategie &amp; Beratung</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+            <div class="f-group"><label>Deine Nachricht</label><textarea name="nachricht"
+                placeholder="Erzähl uns kurz von deinem Projekt, Budget oder deinen Fragen..."></textarea></div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Kostenlosen Marketing-Check anfordern
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+            <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem;">🔒 Keine Spam-Mails.
+              Deine Daten bleiben bei uns.</p>
+          </form>
+        </div>
+        <div class="form-ok" id="cFormOk">
+          <div class="ok-icon">🚀</div>
+          <h3>Nachricht gesendet!</h3>
+          <p>Wir melden uns innerhalb von 48 Stunden bei dir — versprochen.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <p class="page-label">Häufige Fragen</p>
+      <div class="faq-grid">
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Wie läuft das Erstgespräch ab? <span
+              class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>30 Minuten kostenlos per Video-Call. Wir lernen dein Business und deine Ziele kennen und geben dir
+                direkt eine ehrliche Einschätzung — kein Verkaufsgespräch.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Muss ich selbst Content liefern? <span
+              class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Ja — Bilder, Videos und Texte kommen von dir. Wir erstellen keinen eigenen Content, nutzen dein
+                Material aber professionell und optimieren es für jede Plattform.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Wie schnell kommt die erste Kampagne live? <span
+              class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Nach Kickoff und Materialbereitstellung in der Regel 5–10 Werktage. Bei einer Webseite je nach Umfang
+                2–4 Wochen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Gibt es Mindestlaufzeiten? <span
+              class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Wir empfehlen mindestens 3 Monate für sinnvolle Optimierung. Aber wir zwingen niemanden — reden wir im
+                Erstgespräch ehrlich darüber.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Kann ich nur Webseite oder nur Ads buchen? <span
+              class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Ja, beides ist separat buchbar. Kombipakete bieten wir ebenfalls an — zu transparenten Konditionen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Was kostet das? <span class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Das hängt von Umfang und Kanal ab. Im Erstgespräch besprechen wir deinen Bedarf und machen dir einen
+                fairen, konkreten Vorschlag — kein Bauchgefühl-Pricing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-card">
+          <button class="faq-q" onclick="toggleFaq(this)">Habt ihr bereits Erfahrung mit Sicherheitsunternehmen? <span class="faq-ico">+</span></button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Wir bauen unseren Fokus auf die Sicherheitsbranche gezielt auf. Was wir mitbringen: fundiertes Wissen über digitales Marketing, saubere Prozesse und den Anspruch, für jeden Kunden wirklich messbare Ergebnisse zu liefern — keine Versprechen, die wir nicht halten können.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5><a href="#" onclick="navigate('home');return false;">Start</a><a href="#"
+            onclick="navigate('services');return false;">Leistungen</a><a href="#"
+            onclick="navigate('process');return false;">Prozess</a><a href="#"
+            onclick="navigate('about');return false;">Über uns</a>
+        </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5><a href="#" onclick="navigate('services');return false;">Webentwicklung</a><a href="#"
+            onclick="navigate('services');return false;">Meta & Google Ads</a><a href="#"
+            onclick="navigate('services');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5><a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a><a
+            href="https://www.linkedin.com/company/inboxelevate/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate.</p>
+        <div class="socials"><a href="https://www.linkedin.com/company/inboxelevate/" target="_blank"
+            class="soc">in</a><a href="#" class="soc">ig</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ══════════════════ TIPS PAGE ══════════════════ -->
+  <div id="page-tips" class="page">
+    <div class="tips-hero">
+      <p class="page-label">Sofort umsetzbar · Kostenlos</p>
+      <h1 class="page-h1">Quick-Win Tipps für<br><span>Sicherheitsunternehmen.</span></h1>
+      <p class="page-sub">Klick auf eine Karte für Details. Alle Tipps sind heute noch umsetzbar — viele ohne Budget.</p>
+      <div class="tips-filter-bar" id="tipsFilterBar"></div>
+    </div>
+    <div class="tips-stats-row">
+      <div class="tips-stat"><div class="n">16</div><div class="l">Tipps gesamt</div></div>
+      <div class="tips-stat"><div class="n">9</div><div class="l">Hoher Impact</div></div>
+      <div class="tips-stat"><div class="n">4</div><div class="l">Ohne Budget</div></div>
+      <div class="tips-stat"><div class="n">&lt;1h</div><div class="l">Schnellste Umsetzung</div></div>
+    </div>
+    <div class="tips-count" id="tipsCount"></div>
+    <div class="tips-grid" id="tipsGrid"></div>
+    <div class="tips-cta-strip">
+      <p style="font-family:var(--M);font-size:.7rem;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:1.2rem;">Willst du mehr?</p>
+      <h2 style="font-family:var(--H);font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.05em;color:var(--cream);line-height:1.05;">Wir setzen das für dich um.<br><span style="color:var(--green)">Professionell & messbar.</span></h2>
+      <p style="color:rgba(245,243,238,.45);margin-top:1rem;font-size:.9rem;">Kostenloser Marketing-Check — wir zeigen dir, wo du gerade Anfragen verlierst.</p>
+      <a href="#" onclick="navigate('contact');return false;" class="btn-ink" style="margin-top:2rem;display:inline-flex;background:var(--green);color:var(--ink);">Kostenlosen Marketing-Check anfordern →</a>
+    </div>
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" onclick="navigate('home');return false;" class="logo" style="color:var(--cream);">
+            <svg viewBox="0 0 40 40" width="26" fill="none">
+              <path d="M8 32L34 8M34 8L14 6M34 8L32 28" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M34 8L20 22" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M20 22L18 32L23 26" stroke="#1dba6e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            InboxElevate
+          </a>
+          <p>Mehr Anfragen. Mehr Bewerbungen. Spezialisiert auf Sicherheitsunternehmen.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <a href="#" onclick="navigate('home');return false;">Start</a>
+          <a href="#" onclick="navigate('services');return false;">Leistungen</a>
+          <a href="#" onclick="navigate('process');return false;">Prozess</a>
+          <a href="#" onclick="navigate('about');return false;">Über uns</a>
+        </div>
+        <div class="footer-col">
+          <h5>Leistungen</h5>
+          <a href="#" onclick="navigate('services');return false;">Webentwicklung</a>
+          <a href="#" onclick="navigate('services');return false;">Meta & Google Ads</a>
+          <a href="#" onclick="navigate('services');return false;">LinkedIn Ads</a>
+        </div>
+        <div class="footer-col">
+          <h5>Kontakt</h5>
+          <a href="mailto:david@inbox-elevate.de">david@inbox-elevate.de</a>
+          <a href="https://www.linkedin.com/company/inboxelevate/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 InboxElevate.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/inboxelevate/" target="_blank" class="soc">in</a>
+          <a href="#" class="soc">ig</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const body = document.body;
+    const nav = document.getElementById('nav');
+    const mobMenu = document.getElementById('mobMenu');
+    const ham = document.getElementById('ham');
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    const pageWipe = document.getElementById('pageWipe');
+    const preloader = document.getElementById('preloader');
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollProgressFill = document.getElementById('scrollProgressFill');
+    const toastStack = document.getElementById('toastStack');
+    const homeStats = document.getElementById('homeStats');
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
+    const scrollHeavyPages = new Set(['home', 'tips', 'process']);
+    const FORMSPREE_ID = 'xvzveqvz';
+    const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const tipsCats = ['Alle', 'Webseite', 'Google Ads', 'Meta Ads', 'Kein Budget'];
+
+    let currentPage = 'home';
+    let tipsActive = 'Alle';
+    let reducedMotion = motionQuery.matches;
+    let useCustomCursor = !coarsePointerQuery.matches;
+    let revealObserver;
+    let scrambleObserver;
+    let counterObserver;
+    let countersRun = false;
+    let scrollTarget = window.scrollY || 0;
+    let scrollCurrent = window.scrollY || 0;
+    let smoothScrollEnabled = false;
+    let smoothRaf = 0;
+    let isNavigating = false;
+    let heroPrepared = false;
+    let smoothBindingsReady = false;
+    const submitBtnHtml = document.getElementById('submitBtn') ? document.getElementById('submitBtn').innerHTML : '';
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function getScrollMax() {
+      return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    }
+
+    function handleKeyAction(event, callback) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        callback();
+      }
+    }
+
+    function showToast(title, message, type = 'success') {
+      if (!toastStack) return;
+      const toast = document.createElement('div');
+      toast.className = `toast ${type === 'error' ? 'error' : ''}`.trim();
+      toast.innerHTML = `<div class="toast-title">${title}</div><p>${message}</p>`;
+      toastStack.appendChild(toast);
+      requestAnimationFrame(() => toast.classList.add('show'));
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 320);
+      }, 4000);
+    }
+
+    function setCursorMode() {
+      useCustomCursor = !coarsePointerQuery.matches;
+      body.classList.toggle('cursor-off', !useCustomCursor);
+    }
+
+    function bindCursorHover(root = document) {
+      if (!useCustomCursor) return;
+      root.querySelectorAll('a,button,.services-nav-item,[role="button"]').forEach(el => {
+        if (el.dataset.cursorBound === 'true') return;
+        el.dataset.cursorBound = 'true';
+        el.addEventListener('mouseenter', () => {
+          cur.style.transform = 'scale(2.2)';
+          ring.style.opacity = '0';
         });
-
-        // Initiale Darstellung der Tipps
-        renderTips(tipsData);
-
-        // Smooth Scroll für die Buttons (optional)
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('tip-action-btn')) {
-                e.target.textContent = 'In Bearbeitung...';
-                setTimeout(() => {
-                    e.target.textContent = 'Mehr erfahren';
-                }, 2000);
-            }
+        el.addEventListener('mouseleave', () => {
+          cur.style.transform = 'scale(1)';
+          ring.style.opacity = '.5';
         });
-    </script>
+      });
+    }
+
+    function initCursor() {
+      setCursorMode();
+      if (!useCustomCursor) return;
+      document.addEventListener('mousemove', event => {
+        cur.style.left = event.clientX - 6 + 'px';
+        cur.style.top = event.clientY - 6 + 'px';
+        ring.style.left = event.clientX - 18 + 'px';
+        ring.style.top = event.clientY - 18 + 'px';
+      });
+      bindCursorHover();
+    }
+
+    function updateNavLinks(id) {
+      document.querySelectorAll('[data-page]').forEach(link => {
+        link.classList.toggle('active', link.dataset.page === id);
+      });
+    }
+
+    function updateScrollChrome() {
+      const y = window.scrollY || 0;
+      nav.classList.toggle('nav-shrink', y > 80);
+      const visible = scrollHeavyPages.has(currentPage) && getScrollMax() > 240;
+      scrollProgress.classList.toggle('visible', visible);
+      const progress = visible ? clamp(y / Math.max(getScrollMax(), 1), 0, 1) : 0;
+      scrollProgressFill.style.width = `${progress * 100}%`;
+    }
+
+    function syncScrollTarget() {
+      scrollCurrent = window.scrollY || 0;
+      scrollTarget = scrollCurrent;
+      updateScrollChrome();
+    }
+
+    function smoothStep() {
+      scrollCurrent += (scrollTarget - scrollCurrent) * 0.08;
+      if (Math.abs(scrollTarget - scrollCurrent) < 0.4) {
+        scrollCurrent = scrollTarget;
+      }
+      window.scrollTo(0, scrollCurrent);
+      updateScrollChrome();
+      if (Math.abs(scrollTarget - scrollCurrent) >= 0.4) {
+        smoothRaf = requestAnimationFrame(smoothStep);
+      } else {
+        smoothRaf = 0;
+      }
+    }
+
+    function requestSmoothScroll() {
+      if (!smoothRaf) {
+        smoothRaf = requestAnimationFrame(smoothStep);
+      }
+    }
+
+    function scrollPageTo(y, instant = false) {
+      const nextY = clamp(y, 0, getScrollMax());
+      if (!smoothScrollEnabled || instant || reducedMotion) {
+        window.scrollTo(0, nextY);
+        syncScrollTarget();
+        return;
+      }
+      scrollTarget = nextY;
+      requestSmoothScroll();
+    }
+
+    function initSmoothScroll() {
+      smoothScrollEnabled = !reducedMotion && !coarsePointerQuery.matches && window.innerWidth > 900;
+      if (!smoothBindingsReady) {
+        smoothBindingsReady = true;
+        window.addEventListener('wheel', event => {
+          if (!smoothScrollEnabled) return;
+          event.preventDefault();
+          scrollTarget = clamp(scrollTarget + event.deltaY, 0, getScrollMax());
+          requestSmoothScroll();
+        }, { passive: false });
+
+        window.addEventListener('keydown', event => {
+          if (!smoothScrollEnabled) return;
+          const tag = event.target && event.target.tagName ? event.target.tagName.toLowerCase() : '';
+          if (['input', 'textarea', 'select', 'button'].includes(tag) || event.metaKey || event.ctrlKey || event.altKey) return;
+          const map = {
+            ArrowDown: 100,
+            ArrowUp: -100,
+            PageDown: window.innerHeight * 0.9,
+            PageUp: -window.innerHeight * 0.9,
+            ' ': window.innerHeight * 0.9
+          };
+          if (event.key === 'Home') {
+            event.preventDefault();
+            scrollPageTo(0);
+            return;
+          }
+          if (event.key === 'End') {
+            event.preventDefault();
+            scrollPageTo(getScrollMax());
+            return;
+          }
+          if (map[event.key] != null) {
+            event.preventDefault();
+            const delta = event.shiftKey && event.key === ' ' ? -window.innerHeight * 0.9 : map[event.key];
+            scrollTarget = clamp(scrollTarget + delta, 0, getScrollMax());
+            requestSmoothScroll();
+          }
+        });
+      }
+      if (!smoothScrollEnabled) {
+        cancelAnimationFrame(smoothRaf);
+        smoothRaf = 0;
+        syncScrollTarget();
+        return;
+      }
+    }
+
+    function runPageWipe(callback) {
+      if (reducedMotion || !pageWipe) {
+        callback();
+        return Promise.resolve();
+      }
+      return new Promise(resolve => {
+        pageWipe.style.transition = 'transform 350ms cubic-bezier(.22,1,.36,1)';
+        pageWipe.style.transform = 'translateX(0)';
+        setTimeout(() => {
+          callback();
+          pageWipe.style.transition = 'transform 250ms cubic-bezier(.22,1,.36,1)';
+          pageWipe.style.transform = 'translateX(100%)';
+          setTimeout(() => {
+            pageWipe.style.transition = 'none';
+            pageWipe.style.transform = 'translateX(-100%)';
+            resolve();
+          }, 250);
+        }, 350);
+      });
+    }
+
+    async function navigate(id) {
+      if (id === currentPage) {
+        scrollPageTo(0);
+        return;
+      }
+      if (isNavigating) return;
+      const oldPage = document.getElementById(`page-${currentPage}`);
+      const nextPage = document.getElementById(`page-${id}`);
+      if (!nextPage) return;
+      isNavigating = true;
+      await runPageWipe(() => {
+        if (oldPage) oldPage.classList.remove('active');
+        nextPage.classList.add('active');
+        currentPage = id;
+        updateNavLinks(id);
+        if (id === 'tips') {
+          initTipsFilters();
+          renderTips();
+        }
+        if (mobMenu.classList.contains('open')) {
+          toggleMob(false);
+        }
+        scrollPageTo(0, true);
+        setTimeout(() => {
+          initReveal();
+          observeScrambleTargets();
+          updateScrollChrome();
+        }, 40);
+      });
+      isNavigating = false;
+    }
+
+    function showAdsTab(id, btn) {
+      ['meta', 'google', 'linkedin'].forEach(key => {
+        const panel = document.getElementById(`svc-${key}`);
+        if (panel) panel.classList.remove('active');
+      });
+      document.querySelectorAll('#adsTabs .svc-cat-tab').forEach(tab => tab.classList.remove('active'));
+      const activePanel = document.getElementById(`svc-${id}`);
+      if (activePanel) activePanel.classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    function navigateWithService(page, serviceValue) {
+      if (page === 'contact') {
+        navigate('contact');
+        setTimeout(() => {
+          const select = document.getElementById('serviceSelect');
+          if (select && serviceValue) select.value = serviceValue;
+        }, 120);
+        return;
+      }
+      navigate(page);
+    }
+
+    function showService(id) {
+      navigate('services');
+      const adsMap = { meta: 'meta', google: 'google', linkedin: 'linkedin' };
+      if (adsMap[id]) {
+        setTimeout(() => {
+          const btn = document.querySelector(`#adsTabs .svc-cat-tab[onclick*="${id}"]`);
+          showAdsTab(id, btn);
+        }, 120);
+      }
+    }
+
+    function toggleFaq(button) {
+      const card = button.closest('.faq-card');
+      const open = card.classList.contains('open');
+      const scope = card.closest('.faq-grid, .home-faq-list') || document;
+      scope.querySelectorAll('.faq-card').forEach(item => item.classList.remove('open'));
+      if (!open) card.classList.add('open');
+    }
+
+    function toggleMob(force) {
+      const shouldOpen = typeof force === 'boolean' ? force : !ham.classList.contains('open');
+      ham.classList.toggle('open', shouldOpen);
+      mobMenu.classList.toggle('open', shouldOpen);
+    }
+
+    async function submitForm(event) {
+      event.preventDefault();
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet...';
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('server-error');
+        document.getElementById('cForm').style.display = 'none';
+        document.getElementById('cFormOk').style.display = 'block';
+        showToast('Nachricht gesendet', 'Wir melden uns innerhalb von 48 Stunden mit einer ehrlichen Einschaetzung.', 'success');
+      } catch (error) {
+        btn.disabled = false;
+        btn.innerHTML = submitBtnHtml;
+        showToast('Senden fehlgeschlagen', 'Bitte schreib uns direkt an david@inbox-elevate.de oder versuche es gleich erneut.', 'error');
+      }
+    }
+
+    function initReveal() {
+      if (revealObserver) revealObserver.disconnect();
+      if (reducedMotion) {
+        document.querySelectorAll('.sr,.sr-l,.sr-r').forEach(el => el.classList.add('v'));
+        return;
+      }
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('v');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.sr,.sr-l,.sr-r').forEach(el => {
+        el.classList.remove('v');
+        revealObserver.observe(el);
+      });
+    }
+
+    function scrambleText(el) {
+      if (reducedMotion || el.dataset.scrambled === 'true') {
+        el.textContent = el.dataset.original || el.textContent;
+        el.dataset.scrambled = 'true';
+        return;
+      }
+      const original = el.dataset.original || el.textContent.trim();
+      el.dataset.original = original;
+      let frame = 0;
+      const totalFrames = 18;
+      const interval = setInterval(() => {
+        const progress = frame / totalFrames;
+        el.textContent = original.split('').map((char, index) => {
+          if (char === ' ') return ' ';
+          return index < progress * original.length ? original[index] : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+        }).join('');
+        frame += 1;
+        if (frame > totalFrames) {
+          clearInterval(interval);
+          el.textContent = original;
+          el.dataset.scrambled = 'true';
+        }
+      }, 600 / totalFrames);
+    }
+
+    function observeScrambleTargets() {
+      if (scrambleObserver) scrambleObserver.disconnect();
+      const labels = document.querySelectorAll('.page-label,.hero-label');
+      if (reducedMotion) {
+        labels.forEach(label => {
+          if (label.dataset.original) label.textContent = label.dataset.original;
+          label.dataset.scrambled = 'true';
+        });
+        return;
+      }
+      scrambleObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            scrambleText(entry.target);
+            scrambleObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      labels.forEach(label => {
+        if (!label.dataset.original) label.dataset.original = label.textContent.trim();
+        if (label.dataset.scrambled !== 'true') scrambleObserver.observe(label);
+      });
+    }
+
+    function prepareHeroWords() {
+      if (heroPrepared) return;
+      ['tw-line1', 'tw-line2'].forEach(id => {
+        const line = document.getElementById(id);
+        if (!line) return;
+        const words = line.textContent.trim().split(/\s+/);
+        line.innerHTML = words.map((word, index) => `<span class="hero-word-clip"><span class="hero-word" style="--word-delay:${index * 60}ms">${word}</span></span>`).join(' ');
+      });
+      heroPrepared = true;
+    }
+
+    function startHeroAnimations() {
+      prepareHeroWords();
+      const heroHeadline = document.querySelector('.hero-h1');
+      if (!heroHeadline) return;
+      if (reducedMotion) {
+        heroHeadline.classList.add('ready');
+        heroHeadline.querySelectorAll('.hero-word').forEach(word => word.classList.add('no-animate'));
+        return;
+      }
+      requestAnimationFrame(() => heroHeadline.classList.add('ready'));
+    }
+
+    function initMagneticButtons() {
+      document.querySelectorAll('.btn-ink,.nav-cta').forEach(btn => {
+        btn.classList.add('magnetic');
+        if (btn.dataset.magneticBound === 'true') return;
+        btn.dataset.magneticBound = 'true';
+        if (reducedMotion) return;
+        btn.addEventListener('mousemove', event => {
+          if (reducedMotion) {
+            btn.style.transform = '';
+            return;
+          }
+          const rect = btn.getBoundingClientRect();
+          const offsetX = ((event.clientX - rect.left) / rect.width - 0.5) * 16;
+          const offsetY = ((event.clientY - rect.top) / rect.height - 0.5) * 16;
+          btn.style.transform = `translate(${offsetX.toFixed(2)}px, ${offsetY.toFixed(2)}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = '';
+        });
+      });
+    }
+
+    function initSpotlights() {
+      document.querySelectorAll('.panel-feat').forEach(card => card.classList.add('spotlight-card', 'hover-underline-card'));
+      document.querySelectorAll('.faq-card').forEach(card => card.classList.add('hover-underline-card'));
+      document.querySelectorAll('.spotlight-card').forEach(card => {
+        if (card.dataset.spotlightBound === 'true') return;
+        card.dataset.spotlightBound = 'true';
+        card.addEventListener('mousemove', event => {
+          const rect = card.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty('--x', `${x}%`);
+          card.style.setProperty('--y', `${y}%`);
+        });
+      });
+    }
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = `${prefix}${Math.round(ease * target)}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function initCounters() {
+      if (!homeStats) return;
+      if (counterObserver) counterObserver.disconnect();
+      counterObserver = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !countersRun) {
+          countersRun = true;
+          document.querySelectorAll('.stat-counter').forEach((el, index) => {
+            if (reducedMotion) {
+              el.textContent = `${el.dataset.prefix || ''}${el.dataset.target}${el.dataset.suffix || ''}`;
+              return;
+            }
+            setTimeout(() => animateCounter(el), index * 120);
+          });
+        }
+      }, { threshold: 0.3 });
+      counterObserver.observe(homeStats);
+    }
+
+    function applyInteractiveRoles() {
+      document.querySelectorAll('.tip-card-ie').forEach(card => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+      });
+    }
+
+    function enhanceDynamicUI(root = document) {
+      bindCursorHover(root);
+      initMagneticButtons();
+      initSpotlights();
+      applyInteractiveRoles();
+    }
+
+    function initPreloader() {
+      const ready = () => {
+        preloader.classList.add('hide');
+        startHeroAnimations();
+        setTimeout(() => preloader.style.display = 'none', 720);
+      };
+      Promise.race([
+        new Promise(resolve => window.addEventListener('load', resolve, { once: true })),
+        new Promise(resolve => setTimeout(resolve, 1500))
+      ]).then(ready);
+    }
+
+    const tipsData = [
+      { cat: 'Webseite', icon: '🌐', title: 'Telefonnummer im Header — klickbar auf Mobil', impact: 'hoch', body: 'Ueber 70 % der Interessenten suchen auf dem Smartphone. Eine sichtbare, klickbare Nummer (tel:-Link) direkt im Header senkt die Abbruchrate drastisch. <strong>Viele Sicherheitsfirmen verstecken ihren Kontakt im Footer</strong> — ein echter Conversion-Killer.', action: 'Umsetzbar in unter 1 Stunde, auch ohne Webdesigner.' },
+      { cat: 'Webseite', icon: '🌐', title: 'Google-Bewertungen sichtbar einbinden', impact: 'hoch', body: 'Sicherheit ist Vertrauenssache. Wer 4,6+ Sterne bei Google hat und diese <strong>nirgendwo auf der Website zeigt</strong>, verschenkt massiv Vertrauen. Ein simpler Widget oder Screenshot mit Sternebewertung + Anzahl direkt unter dem Hero-Bereich erhoeht die Anfragerate messbar.', action: 'Kostenlosen Google Review Widget einbinden oder direkt mit Screenshot arbeiten.' },
+      { cat: 'Webseite', icon: '🌐', title: 'Ladezeit unter 3 Sekunden', impact: 'hoch', body: 'Laut Google verlassen 53 % der Nutzer eine Seite, wenn sie laenger als 3 Sekunden laedt. Gerade Sicherheitswebsites laden oft durch schlechte Bildoptimierung langsam. <strong>PageSpeed Insights</strong> zeigt sofort, was verbesserbar ist.', action: 'Bilder komprimieren und unnoetige Skripte ausmisten.' },
+      { cat: 'Webseite', icon: '🌐', title: 'Klarer Leistungsbereich mit regionalen Begriffen', impact: 'mittel', body: 'Statt "Wir bieten Sicherheitsdienste an" lieber: <strong>"Objektschutz in Duesseldorf & Umgebung"</strong>. Lokale Keywords im Fliesstext und in Ueberschriften verbessern das organische Ranking bei Google.', action: 'Alle Leistungen namentlich nennen und Stadt oder Region ergaenzen.' },
+      { cat: 'Webseite', icon: '🌐', title: 'Kontaktformular mit Reaktionszeit-Versprechen', impact: 'mittel', body: 'Niemand fuellt ein Formular aus, wenn er nicht weiss, wann er eine Antwort erhaelt. Ein einfacher Satz wie <strong>"Wir melden uns innerhalb von 2 Stunden"</strong> direkt neben dem Formular erhoeht die Abschlussrate deutlich.', action: 'Text ergaenzen und intern sicherstellen, dass die Reaktionszeit stimmt.' },
+      { cat: 'Google Ads', icon: '📣', title: 'Anzeigenerweiterungen vollstaendig nutzen', impact: 'hoch', body: 'Die meisten Sicherheitsfirmen schalten Google Ads ohne <strong>Anruferweiterung, Standorterweiterung und Sitelinks</strong>. Dabei verdoppeln diese die sichtbare Anzeigenflaeche ohne Mehrkosten.', action: 'In Google Ads alle relevanten Assets aktivieren.' },
+      { cat: 'Google Ads', icon: '📣', title: 'Negative Keywords einpflegen', impact: 'hoch', body: 'Ohne Ausschluss-Keywords zahlen Sicherheitsfirmen fuer Suchanfragen wie "Sicherheitsdienst Ausbildung" oder "Sicherheitskurs kostenlos". <strong>Bis zu 30 % des Budgets versickert</strong> so in unpassende Klicks.', action: 'Suchanfragebericht woechentlich pruefen und irrelevante Begriffe ausschliessen.' },
+      { cat: 'Google Ads', icon: '📣', title: 'Standortbasiertes Targeting auf Region eingrenzen', impact: 'hoch', body: 'Viele Kampagnen laufen bundesweit, obwohl das Unternehmen nur regional taetig ist. <strong>Jeder Klick ausserhalb des Einzugsgebiets ist verschwendetes Geld.</strong>', action: 'Zielregion je nach Einsatzgebiet auf einen realistischen Radius begrenzen.' },
+      { cat: 'Google Ads', icon: '📣', title: 'Anzeigentexte mit Zahlen und Konkretem', impact: 'mittel', body: 'Allgemeine Texte wie "Ihr zuverlaessiger Sicherheitsdienst" performen schwach. Besser: <strong>"24/7 Objektschutz – Reaktionszeit unter 15 Min."</strong> oder konkrete Nachweise wie Bewertungen und Einsatzzeiten.', action: 'Mindestens 3 Anzeigenvarianten mit spezifischen USPs testen.' },
+      { cat: 'Meta Ads', icon: '📱', title: 'Video statt Bild', impact: 'hoch', body: 'Facebook- und Instagram-Ads mit Video erzielen oft deutlich mehr Aufmerksamkeit als reine Bildanzeigen. Ein 15-Sekunden-Clip vom Team oder Einsatzfahrzeug reicht oft schon aus.', action: '1 kurzes Video mit dem Smartphone drehen und mit Untertiteln versehen.' },
+      { cat: 'Meta Ads', icon: '📱', title: 'Retargeting auf Webseitenbesucher aktivieren', impact: 'hoch', body: 'Wer die Webseite besucht hat und keine Anfrage gestellt hat, ist ein <strong>heisser Lead</strong>. Meta-Retargeting erreicht genau diese Personen erneut und oft guenstiger als kalte Zielgruppen.', action: 'Meta Pixel installieren und Retargeting-Kampagne aufsetzen.' },
+      { cat: 'Meta Ads', icon: '📱', title: 'Lead-Formulare statt Landingpage testen', impact: 'mittel', body: 'Metas native Lead-Formulare werden direkt in der App ausgefuellt. <strong>Keine Ladezeit, weniger Abbrueche</strong> und oft eine deutlich hoehere Conversion auf Mobilgeraeten.', action: 'Eine Lead-Generierungskampagne mit Instant-Formular testen.' },
+      { cat: 'Kein Budget', icon: '✅', title: 'Google Business Profil vollstaendig ausfuellen', impact: 'hoch', body: 'Wer bei Google Maps ganz oben erscheinen will, muss sein Google-Business-Profil <strong>vollstaendig ausfuellen: Oeffnungszeiten, Fotos, Leistungen, Kurzbeschreibung</strong>. Ein gepflegtes Profil bekommt deutlich mehr Klicks.', action: 'Alle Felder ausfuellen und mindestens 5 aktuelle Fotos hochladen.' },
+      { cat: 'Kein Budget', icon: '✅', title: 'Kundenbewertungen aktiv anfragen', impact: 'hoch', body: 'Sicherheitsfirmen mit vielen Bewertungen schlagen lokale Wettbewerber fast immer in der Wahrnehmung. <strong>Die meisten Kunden bewerten, wenn man sie direkt und sauber darum bittet.</strong>', action: 'Direktlink zur Bewertungsseite nach jedem Abschluss verschicken.' },
+      { cat: 'Kein Budget', icon: '✅', title: 'WhatsApp-Kontakt auf der Website einbinden', impact: 'mittel', body: 'Viele Interessenten schreiben lieber per WhatsApp als ueber ein Formular. Ein <strong>WhatsApp-Button mit vorausgefuelltem Text</strong> senkt die Hemmschwelle massiv.', action: 'wa.me-Link mit sinnvoller Startnachricht auf der Seite einbinden.' },
+      { cat: 'Kein Budget', icon: '✅', title: 'Firmenwagen als kostenloses Werbemittel', impact: 'mittel', body: 'Ein gebrandetes Fahrzeug im Einsatz ist <strong>Aussenwerbung ohne laufende Kosten</strong>. Firmenname, Telefonnummer und Leistungsangabe sorgen lokal fuer dauerhafte Sichtbarkeit.', action: 'Beschriftung so klar halten, dass sie im Vorbeifahren lesbar ist.' }
+    ];
+
+    function renderTips() {
+      const filtered = tipsActive === 'Alle' ? tipsData : tipsData.filter(tip => tip.cat === tipsActive);
+      const countEl = document.getElementById('tipsCount');
+      const gridEl = document.getElementById('tipsGrid');
+      if (!countEl || !gridEl) return;
+      countEl.textContent = `${filtered.length} Tipps gefunden`;
+      gridEl.innerHTML = '';
+      filtered.forEach((tip, index) => {
+        const card = document.createElement('div');
+        const highImpact = tip.impact === 'hoch';
+        card.className = 'tip-card-ie';
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.innerHTML = `
+          <div class="tip-top-ie">
+            <div class="tip-icon-ie">${tip.icon}</div>
+            <div style="flex:1">
+              <div class="tip-title-ie">${tip.title}</div>
+              <span class="tip-badge ${highImpact ? 'tip-badge-high' : 'tip-badge-mid'}">${highImpact ? '⚡ Hoher Impact' : '◎ Mittlerer Impact'}</span>
+            </div>
+            <span class="tip-chevron">▼</span>
+          </div>
+          <div class="tip-body-ie">
+            <div class="tip-body-ie-inner">
+              <p>${tip.body}</p>
+              <div class="tip-action-ie">${tip.action}</div>
+            </div>
+          </div>`;
+        card.addEventListener('click', () => {
+          const open = card.classList.contains('open');
+          gridEl.querySelectorAll('.tip-card-ie').forEach(item => item.classList.remove('open'));
+          if (!open) card.classList.add('open');
+        });
+        card.addEventListener('keydown', event => handleKeyAction(event, () => card.click()));
+        gridEl.appendChild(card);
+      });
+      enhanceDynamicUI(gridEl);
+    }
+
+    function initTipsFilters() {
+      const bar = document.getElementById('tipsFilterBar');
+      if (!bar) return;
+      bar.innerHTML = tipsCats.map(cat => `<button class="tips-filter-btn${cat === tipsActive ? ' active' : ''}" data-cat="${cat}">${cat}</button>`).join('');
+      bar.querySelectorAll('.tips-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          tipsActive = btn.dataset.cat;
+          bar.querySelectorAll('.tips-filter-btn').forEach(item => item.classList.remove('active'));
+          btn.classList.add('active');
+          renderTips();
+        });
+      });
+      bindCursorHover(bar);
+    }
+
+    initCursor();
+    initSmoothScroll();
+    initReveal();
+    observeScrambleTargets();
+    initCounters();
+    initMagneticButtons();
+    initSpotlights();
+    initPreloader();
+    updateNavLinks(currentPage);
+    updateScrollChrome();
+    initTipsFilters();
+    renderTips();
+
+    motionQuery.addEventListener('change', event => {
+      reducedMotion = event.matches;
+      initReveal();
+      observeScrambleTargets();
+      initSmoothScroll();
+      initMagneticButtons();
+      if (reducedMotion) startHeroAnimations();
+    });
+
+    coarsePointerQuery.addEventListener('change', () => {
+      setCursorMode();
+      initSmoothScroll();
+    });
+
+    window.addEventListener('resize', () => {
+      initSmoothScroll();
+      updateScrollChrome();
+    });
+
+    window.addEventListener('scroll', () => {
+      if (!smoothScrollEnabled) {
+        syncScrollTarget();
+        return;
+      }
+      updateScrollChrome();
+      if (!smoothRaf && Math.abs(window.scrollY - scrollTarget) > 4) {
+        syncScrollTarget();
+      }
+    }, { passive: true });
+  </script>
 </body>
+
 </html>
